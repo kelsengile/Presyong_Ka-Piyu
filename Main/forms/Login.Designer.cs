@@ -28,14 +28,16 @@
             txtPassword = new TextBox();
             btnLogin = new Button();
             btnSignup = new Button();
+            btnForgot = new Button();
             SuspendLayout();
             // 
             // txtUsername
             // 
-            txtUsername.Location = new Point(521, 128);
+            txtUsername.Location = new Point(521, 139);
             txtUsername.Name = "txtUsername";
             txtUsername.Size = new Size(200, 23);
             txtUsername.TabIndex = 0;
+            txtUsername.TextChanged += txtUsername_TextChanged;
             // 
             // txtPassword
             // 
@@ -48,7 +50,7 @@
             // 
             // btnLogin
             // 
-            btnLogin.Location = new Point(578, 271);
+            btnLogin.Location = new Point(578, 316);
             btnLogin.Name = "btnLogin";
             btnLogin.Size = new Size(90, 25);
             btnLogin.TabIndex = 2;
@@ -57,12 +59,21 @@
             // 
             // btnSignup
             // 
-            btnSignup.Location = new Point(578, 316);
+            btnSignup.Location = new Point(578, 361);
             btnSignup.Name = "btnSignup";
             btnSignup.Size = new Size(90, 25);
             btnSignup.TabIndex = 3;
             btnSignup.Text = "Sign Up";
             btnSignup.Click += btnSignup_Click;
+            // 
+            // btnForgot
+            // 
+            btnForgot.Location = new Point(562, 249);
+            btnForgot.Name = "btnForgot";
+            btnForgot.Size = new Size(120, 25);
+            btnForgot.TabIndex = 4;
+            btnForgot.Text = "Forgot Password?";
+            btnForgot.Click += btnForgot_Click;
             // 
             // Login
             // 
@@ -71,6 +82,7 @@
             Controls.Add(txtPassword);
             Controls.Add(btnLogin);
             Controls.Add(btnSignup);
+            Controls.Add(btnForgot);
             Name = "Login";
             Text = "Login";
             ResumeLayout(false);
@@ -81,7 +93,7 @@
         private System.Windows.Forms.TextBox txtPassword;
         private System.Windows.Forms.Button btnLogin;
         private System.Windows.Forms.Button btnSignup;
-
+        private System.Windows.Forms.Button btnForgot;
 
         #region Windows Form Designer generated code
 
@@ -89,7 +101,7 @@
         ///  Required method for Designer support - do not modify
         ///  the contents of this method with the code editor.
         /// </summary>
-        
+
 
         #endregion
     }

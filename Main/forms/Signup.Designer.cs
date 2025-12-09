@@ -24,63 +24,81 @@
         {
             txtUsername = new TextBox();
             txtPassword = new TextBox();
-            btnCreate = new Button();
+            txtConfirmPassword = new TextBox();
+            txtEmail = new TextBox();
+            btnSignup = new Button();
             btnBack = new Button();
             SuspendLayout();
             // 
             // txtUsername
             // 
-            txtUsername.Location = new Point(52, 143);
+            txtUsername.Location = new Point(20, 20);
             txtUsername.Name = "txtUsername";
             txtUsername.Size = new Size(200, 23);
             txtUsername.TabIndex = 0;
             // 
             // txtPassword
             // 
-            txtPassword.Location = new Point(52, 200);
+            txtPassword.Location = new Point(20, 60);
             txtPassword.Name = "txtPassword";
             txtPassword.PasswordChar = '*';
             txtPassword.Size = new Size(200, 23);
             txtPassword.TabIndex = 1;
             // 
-            // btnCreate
+            // txtConfirmPassword
             // 
-            btnCreate.Location = new Point(104, 288);
-            btnCreate.Name = "btnCreate";
-            btnCreate.Size = new Size(90, 25);
-            btnCreate.TabIndex = 2;
-            btnCreate.Text = "Sign Up";
-            btnCreate.Click += btnCreate_Click;
+            txtConfirmPassword.Location = new Point(20, 100);
+            txtConfirmPassword.Name = "txtConfirmPassword";
+            txtConfirmPassword.PasswordChar = '*';
+            txtConfirmPassword.Size = new Size(200, 23);
+            txtConfirmPassword.TabIndex = 2;
+            // 
+            // txtEmail
+            // 
+            txtEmail.Location = new Point(20, 140);
+            txtEmail.Name = "txtEmail";
+            txtEmail.Size = new Size(200, 23);
+            txtEmail.TabIndex = 3;
+            // 
+            // btnSignup
+            // 
+            btnSignup.Location = new Point(20, 180);
+            btnSignup.Name = "btnSignup";
+            btnSignup.Size = new Size(90, 25);
+            btnSignup.TabIndex = 4;
+            btnSignup.Text = "Sign Up";
+            btnSignup.Click += btnSignup_Click;
             // 
             // btnBack
             // 
-            btnBack.Location = new Point(104, 338);
+            btnBack.Location = new Point(130, 180);
             btnBack.Name = "btnBack";
             btnBack.Size = new Size(90, 25);
-            btnBack.TabIndex = 3;
+            btnBack.TabIndex = 5;
             btnBack.Text = "Back";
             btnBack.Click += btnBack_Click;
             // 
             // Signup
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
-            AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
             Controls.Add(txtUsername);
             Controls.Add(txtPassword);
-            Controls.Add(btnCreate);
+            Controls.Add(txtConfirmPassword);
+            Controls.Add(txtEmail);
+            Controls.Add(btnSignup);
             Controls.Add(btnBack);
             Name = "Signup";
-            Text = "Sign Up";
-            Load += Signup_Load;
             ResumeLayout(false);
             PerformLayout();
         }
 
         private System.Windows.Forms.TextBox txtUsername;
         private System.Windows.Forms.TextBox txtPassword;
-        private System.Windows.Forms.Button btnCreate;
+        private System.Windows.Forms.TextBox txtConfirmPassword;
+        private System.Windows.Forms.TextBox txtEmail;
+        private System.Windows.Forms.Button btnSignup;
         private System.Windows.Forms.Button btnBack;
+    
 
         #region Windows Form Designer generated code
 
@@ -88,9 +106,9 @@
         /// Required method for Designer support - do not modify
         /// the contents of this method with the code editor.
         /// </summary>
-        
-            
-        
+
+
+
 
         #endregion
     }

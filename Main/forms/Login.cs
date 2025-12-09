@@ -73,6 +73,14 @@ namespace Presyong_Ka_Piyu
         {
             Signup signupForm = new Signup();
             signupForm.Show();
+        
+            this.Hide();
+        }
+
+        private void btnForgot_Click(object sender, EventArgs e)
+        {
+            ResetPassword rp = new ResetPassword();
+            rp.Show();
             this.Hide();
         }
 
@@ -82,6 +90,11 @@ namespace Presyong_Ka_Piyu
         }
 
         private void txtPassword_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtUsername_TextChanged(object sender, EventArgs e)
         {
 
         }
