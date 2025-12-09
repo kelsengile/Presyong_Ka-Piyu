@@ -1,97 +1,64 @@
-﻿using System;
+﻿using BCrypt.Net;
+using Presyong_Ka_Piyu.Main.forms;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SQLite;
 using System.Drawing;
+using System.Net;
+using System.Net.Mail;
 using System.Text;
 using System.Windows.Forms;
-using System.Data.SQLite;
-using BCrypt.Net;
 
 namespace Presyong_Ka_Piyu
 {
     public partial class Signup : Form
     {
-        private readonly string dbPath = @"Data Source=C:\Users\conel\Downloads\Programs\Projects\Presyong_Ka-Piyu\Main\data\Presyong_Ka-Piyu_Database.db";
+        public static string PendingUsername;
+        public static string PendingPassword;
+        public static string PendingEmail;
 
         public Signup()
         {
             InitializeComponent();
         }
 
-        private void btnCreate_Click(object sender, EventArgs e)
+        private void btnSignup_Click(object sender, EventArgs e)
         {
             string username = txtUsername.Text.Trim();
             string password = txtPassword.Text.Trim();
+            string confirmPassword = txtConfirmPassword.Text.Trim();
+            string email = txtEmail.Text.Trim();
 
-            if (username == "" || password == "")
+            if (username == "" || password == "" || confirmPassword == "" || email == "")
             {
-                MessageBox.Show("Please enter a username and password.");
+                MessageBox.Show("Please fill all fields.");
                 return;
             }
 
-            try
+            if (password != confirmPassword)
             {
-                using (SQLiteConnection conn = new SQLiteConnection(dbPath))
-                {
-                    conn.Open();
-
-                    // Check if username already exists
-                    string checkQuery = "SELECT COUNT(*) FROM Users WHERE Username = @Username";
-                    using (SQLiteCommand checkCmd = new SQLiteCommand(checkQuery, conn))
-                    {
-                        checkCmd.Parameters.AddWithValue("@Username", username);
-                        long count = (long)checkCmd.ExecuteScalar();
-
-                        if (count > 0)
-                        {
-                            MessageBox.Show("Username already taken.");
-                            return;
-                        }
-                    }
-
-                    // Hash password using BCrypt
-                    string hashedPassword = BCrypt.Net.BCrypt.HashPassword(password);
-
-                    // Insert user into database
-                    string insertQuery = @"
-                        INSERT INTO Users (Username, PasswordHash)
-                        VALUES (@Username, @PasswordHash)";
-
-                    using (SQLiteCommand cmd = new SQLiteCommand(insertQuery, conn))
-                    {
-                        cmd.Parameters.AddWithValue("@Username", username);
-                        cmd.Parameters.AddWithValue("@PasswordHash", hashedPassword);
-                        cmd.ExecuteNonQuery();
-                    }
-
-                    conn.Close();
-                }
-
-                MessageBox.Show("Account created successfully!");
-
-                // Go back to login form
-                Login login = new Login();
-                login.Show();
-                this.Hide();
+                MessageBox.Show("Passwords do not match.");
+                return;
             }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Signup failed: " + ex.Message);
-            }
+
+            // Save temporarily
+            PendingUsername = username;
+            PendingPassword = password;
+            PendingEmail = email;
+
+            // Open OTP window
+            SendOtp otpForm = new SendOtp();
+            otpForm.Show();
+            this.Hide();
         }
 
-        // BACK BUTTON LOGIC
         private void btnBack_Click(object sender, EventArgs e)
         {
             Login login = new Login();
             login.Show();
             this.Hide();
-        }
-
-        private void Signup_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }
