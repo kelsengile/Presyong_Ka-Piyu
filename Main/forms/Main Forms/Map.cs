@@ -13,9 +13,29 @@ namespace Presyong_Ka_Piyu.Main.forms
         public Map()
         {
             InitializeComponent();
+            this.FormBorderStyle = FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
         }
 
-       
+        // Open the Panel Form
+        private void btnPanel_Click(object sender, EventArgs e)
+        {
+            PopUp_Forms.Panel panel = new PopUp_Forms.Panel();
+            panel.Show();
+        }
 
+        // Open the Search Form
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            PopUp_Forms.Search search = new PopUp_Forms.Search();
+            search.Show();
+        }
+
+        // Open the Add Form
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            Add add = new Add();
+            add.Show();
+        }
     }
 }
