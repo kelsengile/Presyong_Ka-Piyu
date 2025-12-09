@@ -32,10 +32,11 @@
             // 
             // txtUsername
             // 
-            txtUsername.Location = new Point(521, 128);
+            txtUsername.Location = new Point(521, 139);
             txtUsername.Name = "txtUsername";
             txtUsername.Size = new Size(200, 23);
             txtUsername.TabIndex = 0;
+            txtUsername.TextChanged += txtUsername_TextChanged;
             // 
             // txtPassword
             // 
