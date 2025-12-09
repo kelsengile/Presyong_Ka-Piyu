@@ -27,9 +27,19 @@
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent()
-        { 
-        
-        
+        {
+            SuspendLayout();
+            // 
+            // Map
+            // 
+            ClientSize = new Size(1264, 681);
+            MaximumSize = new Size(1280, 720);
+            MinimumSize = new Size(1280, 720);
+            Name = "Map";
+            Text = "Map";
+            ResumeLayout(false);
+
+
         }
 
         #endregion
