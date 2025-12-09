@@ -44,11 +44,11 @@ namespace Presyong_Ka_Piyu.Main.forms
                 smtp.EnableSsl = true;
 
                 smtp.Send(mail);
-                MessageBox.Show("OTP sent!");
+                CustomMessageBox.Show("OTP sent!");
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Failed to send OTP: " + ex.Message);
+                CustomMessageBox.Show("Failed to send OTP: " + ex.Message);
             }
         }
 
@@ -56,7 +56,7 @@ namespace Presyong_Ka_Piyu.Main.forms
         {
             if (txtOtp.Text.Trim() != generatedOtp)
             {
-                MessageBox.Show("Invalid OTP.");
+                CustomMessageBox.Show("Invalid OTP.");
                 return;
             }
 
@@ -84,14 +84,14 @@ namespace Presyong_Ka_Piyu.Main.forms
                     conn.Close();
                 }
 
-                MessageBox.Show("Account created successfully!");
+                CustomMessageBox.Show("Account created successfully!");
                 Login login = new Login();
                 login.Show();
                 this.Hide();
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error creating account: " + ex.Message);
+                CustomMessageBox.Show("Error creating account: " + ex.Message);
             }
         }
 

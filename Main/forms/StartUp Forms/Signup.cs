@@ -33,13 +33,13 @@ namespace Presyong_Ka_Piyu
 
             if (username == "" || password == "" || confirmPassword == "" || email == "")
             {
-                MessageBox.Show("Please fill all fields.");
+                CustomMessageBox.Show("Please fill all fields.");
                 return;
             }
 
             if (password != confirmPassword)
             {
-                MessageBox.Show("Passwords do not match.");
+                CustomMessageBox.Show("Passwords do not match.");
                 return;
             }
 

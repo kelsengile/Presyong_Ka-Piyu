@@ -41,20 +41,20 @@ namespace Presyong_Ka_Piyu
 
                                 if (BCrypt.Net.BCrypt.Verify(password, storedHash))
                                 {
-                                    MessageBox.Show("Login Successful!");
+                                    CustomMessageBox.Show("Signup successful!");
 
-                                    MainForm main = new MainForm();
+                                    Map main = new Map();
                                     main.Show();
                                     this.Hide();
                                 }
                                 else
                                 {
-                                    MessageBox.Show("Incorrect password.");
+                                    CustomMessageBox.Show("Incorrect password.");
                                 }
                             }
                             else
                             {
-                                MessageBox.Show("Username not found.");
+                                CustomMessageBox.Show("Username not found.");
                             }
                         }
                     }
@@ -64,7 +64,7 @@ namespace Presyong_Ka_Piyu
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Login failed: " + ex.Message);
+                CustomMessageBox.Show("Login failed: " + ex.Message);
             }
         }
 
@@ -82,6 +82,7 @@ namespace Presyong_Ka_Piyu
             ResetPassword rp = new ResetPassword();
             rp.Show();
             this.Hide();
+
         }
 
         private void Login_Load(object sender, EventArgs e)

@@ -41,7 +41,7 @@ namespace Presyong_Ka_Piyu.Main.forms
 
             if (email == "" || !IsValidEmail(email))
             {
-                MessageBox.Show("Please enter a valid email.");
+                CustomMessageBox.Show("Please enter a valid email.");
                 return;
             }
 
@@ -64,11 +64,11 @@ namespace Presyong_Ka_Piyu.Main.forms
                 smtp.EnableSsl = true;
 
                 smtp.Send(mail);
-                MessageBox.Show("OTP sent to your email.");
+                CustomMessageBox.Show("OTP sent to your email.");
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Failed to send OTP: " + ex.Message);
+                CustomMessageBox.Show("Failed to send OTP: " + ex.Message);
             }
         }
 
@@ -82,19 +82,19 @@ namespace Presyong_Ka_Piyu.Main.forms
 
             if (email == "" || otp == "" || newPass == "" || confirmPass == "")
             {
-                MessageBox.Show("All fields are required.");
+                CustomMessageBox.Show("All fields are required.");
                 return;
             }
 
             if (otp != generatedOtp)
             {
-                MessageBox.Show("Invalid OTP.");
+                CustomMessageBox.Show("Invalid OTP.");
                 return;
             }
 
             if (newPass != confirmPass)
             {
-                MessageBox.Show("Passwords do not match.");
+                CustomMessageBox.Show("Passwords do not match.");
                 return;
             }
 
@@ -113,7 +113,7 @@ namespace Presyong_Ka_Piyu.Main.forms
 
                         if (count == 0)
                         {
-                            MessageBox.Show("Email not found.");
+                            CustomMessageBox.Show("Email not found.");
                             return;
                         }
                     }
@@ -134,14 +134,14 @@ namespace Presyong_Ka_Piyu.Main.forms
                     conn.Close();
                 }
 
-                MessageBox.Show("Password reset successfully!");
+                CustomMessageBox.Show("Password reset successfully!");
                 Login login = new Login();
                 login.Show();
                 this.Hide();
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error resetting password: " + ex.Message);
+                CustomMessageBox.Show("Error resetting password: " + ex.Message);
             }
         }
 
@@ -150,6 +150,16 @@ namespace Presyong_Ka_Piyu.Main.forms
             Login login = new Login();
             login.Show();
             this.Hide();
+        }
+
+        private void txtConfirmPassword_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtNewPassword_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
