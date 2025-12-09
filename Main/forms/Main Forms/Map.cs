@@ -8,15 +8,14 @@ using System.Windows.Forms;
 
 namespace Presyong_Ka_Piyu.Main.forms
 {
-    public partial class MainForm : Form
+    public partial class Map : Form
     {
-        public MainForm()
+        public Map()
         {
             InitializeComponent();
         }
 
-        public MainForm(string fullName, string role)
-        {
-        }
+       
+
     }
 }

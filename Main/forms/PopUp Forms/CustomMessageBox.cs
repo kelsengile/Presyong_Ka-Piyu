@@ -42,6 +42,7 @@ namespace Presyong_Ka_Piyu.Main.forms
         {
             this.Close();
         }
+
     }
 }
   

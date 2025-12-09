@@ -90,6 +90,7 @@
             MaximumSize = new Size(816, 489);
             MinimumSize = new Size(816, 489);
             Name = "Signup";
+            Text = "SignUp";
             ResumeLayout(false);
             PerformLayout();
         }

@@ -1,6 +1,6 @@
-﻿namespace Presyong_Ka_Piyu.Main.forms
+﻿namespace Presyong_Ka_Piyu.Main.forms.PopUp_Forms
 {
-    partial class MainForm
+    partial class ShopInfo
     {
         /// <summary>
         /// Required designer variable.
@@ -28,16 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            SuspendLayout();
-            // 
-            // MainForm
-            // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
-            AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1264, 681);
-            Name = "MainForm";
-            Text = "MainForm";
-            ResumeLayout(false);
+            this.components = new System.ComponentModel.Container();
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Text = "ShopInfoForm";
         }
 
         #endregion

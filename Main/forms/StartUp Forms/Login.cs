@@ -43,7 +43,7 @@ namespace Presyong_Ka_Piyu
                                 {
                                     CustomMessageBox.Show("Signup successful!");
 
-                                    MainForm main = new MainForm();
+                                    Map main = new Map();
                                     main.Show();
                                     this.Hide();
                                 }
@@ -82,6 +82,7 @@ namespace Presyong_Ka_Piyu
             ResetPassword rp = new ResetPassword();
             rp.Show();
             this.Hide();
+
         }
 
         private void Login_Load(object sender, EventArgs e)
