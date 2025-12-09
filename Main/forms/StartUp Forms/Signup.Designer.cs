@@ -32,14 +32,14 @@
             // 
             // txtUsername
             // 
-            txtUsername.Location = new Point(20, 20);
+            txtUsername.Location = new Point(37, 138);
             txtUsername.Name = "txtUsername";
             txtUsername.Size = new Size(200, 23);
             txtUsername.TabIndex = 0;
             // 
             // txtPassword
             // 
-            txtPassword.Location = new Point(20, 60);
+            txtPassword.Location = new Point(37, 183);
             txtPassword.Name = "txtPassword";
             txtPassword.PasswordChar = '*';
             txtPassword.Size = new Size(200, 23);
@@ -47,7 +47,7 @@
             // 
             // txtConfirmPassword
             // 
-            txtConfirmPassword.Location = new Point(20, 100);
+            txtConfirmPassword.Location = new Point(37, 230);
             txtConfirmPassword.Name = "txtConfirmPassword";
             txtConfirmPassword.PasswordChar = '*';
             txtConfirmPassword.Size = new Size(200, 23);
@@ -55,14 +55,14 @@
             // 
             // txtEmail
             // 
-            txtEmail.Location = new Point(20, 140);
+            txtEmail.Location = new Point(37, 280);
             txtEmail.Name = "txtEmail";
             txtEmail.Size = new Size(200, 23);
             txtEmail.TabIndex = 3;
             // 
             // btnSignup
             // 
-            btnSignup.Location = new Point(20, 180);
+            btnSignup.Location = new Point(95, 329);
             btnSignup.Name = "btnSignup";
             btnSignup.Size = new Size(90, 25);
             btnSignup.TabIndex = 4;
@@ -71,7 +71,7 @@
             // 
             // btnBack
             // 
-            btnBack.Location = new Point(130, 180);
+            btnBack.Location = new Point(95, 398);
             btnBack.Name = "btnBack";
             btnBack.Size = new Size(90, 25);
             btnBack.TabIndex = 5;
@@ -87,6 +87,8 @@
             Controls.Add(txtEmail);
             Controls.Add(btnSignup);
             Controls.Add(btnBack);
+            MaximumSize = new Size(816, 489);
+            MinimumSize = new Size(816, 489);
             Name = "Signup";
             ResumeLayout(false);
             PerformLayout();

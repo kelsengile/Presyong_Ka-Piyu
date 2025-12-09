@@ -22,65 +22,90 @@
 
         private void InitializeComponent()
         {
-            this.txtEmail = new System.Windows.Forms.TextBox();
-            this.txtOtp = new System.Windows.Forms.TextBox();
-            this.txtNewPassword = new System.Windows.Forms.TextBox();
-            this.txtConfirmPassword = new System.Windows.Forms.TextBox();
-
-            this.btnSendOtp = new System.Windows.Forms.Button();
-            this.btnReset = new System.Windows.Forms.Button();
-            this.btnBack = new System.Windows.Forms.Button();
-
-            // Email
-            this.txtEmail.Location = new System.Drawing.Point(20, 20);
-            this.txtEmail.Size = new System.Drawing.Size(200, 23);
-            this.txtEmail.Name = "txtEmail";
-
-            // OTP
-            this.txtOtp.Location = new System.Drawing.Point(20, 60);
-            this.txtOtp.Size = new System.Drawing.Size(200, 23);
-            this.txtOtp.Name = "txtOtp";
-
-            // New Password
-            this.txtNewPassword.Location = new System.Drawing.Point(20, 100);
-            this.txtNewPassword.Size = new System.Drawing.Size(200, 23);
-            this.txtNewPassword.PasswordChar = '*';
-            this.txtNewPassword.Name = "txtNewPassword";
-
-            // Confirm Password
-            this.txtConfirmPassword.Location = new System.Drawing.Point(20, 140);
-            this.txtConfirmPassword.Size = new System.Drawing.Size(200, 23);
-            this.txtConfirmPassword.PasswordChar = '*';
-            this.txtConfirmPassword.Name = "txtConfirmPassword";
-
-            // Send OTP button
-            this.btnSendOtp.Location = new System.Drawing.Point(20, 180);
-            this.btnSendOtp.Size = new System.Drawing.Size(90, 25);
-            this.btnSendOtp.Text = "Send OTP";
-            this.btnSendOtp.Click += new System.EventHandler(this.btnSendOtp_Click);
-
-            // Reset button
-            this.btnReset.Location = new System.Drawing.Point(130, 180);
-            this.btnReset.Size = new System.Drawing.Size(90, 25);
-            this.btnReset.Text = "Reset";
-            this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
-
-            // Back button
-            this.btnBack.Location = new System.Drawing.Point(75, 220);
-            this.btnBack.Size = new System.Drawing.Size(90, 25);
-            this.btnBack.Text = "Back";
-            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
-
-            // Form
-            this.ClientSize = new System.Drawing.Size(250, 260);
-            this.Controls.Add(this.txtEmail);
-            this.Controls.Add(this.txtOtp);
-            this.Controls.Add(this.txtNewPassword);
-            this.Controls.Add(this.txtConfirmPassword);
-            this.Controls.Add(this.btnSendOtp);
-            this.Controls.Add(this.btnReset);
-            this.Controls.Add(this.btnBack);
-            this.Name = "ResetPassword";
+            txtEmail = new TextBox();
+            txtOtp = new TextBox();
+            txtNewPassword = new TextBox();
+            txtConfirmPassword = new TextBox();
+            btnSendOtp = new Button();
+            btnReset = new Button();
+            btnBack = new Button();
+            SuspendLayout();
+            // 
+            // txtEmail
+            // 
+            txtEmail.Location = new Point(65, 86);
+            txtEmail.Name = "txtEmail";
+            txtEmail.Size = new Size(200, 23);
+            txtEmail.TabIndex = 0;
+            // 
+            // txtOtp
+            // 
+            txtOtp.Location = new Point(65, 171);
+            txtOtp.Name = "txtOtp";
+            txtOtp.Size = new Size(200, 23);
+            txtOtp.TabIndex = 1;
+            // 
+            // txtNewPassword
+            // 
+            txtNewPassword.Location = new Point(65, 211);
+            txtNewPassword.Name = "txtNewPassword";
+            txtNewPassword.PasswordChar = '*';
+            txtNewPassword.Size = new Size(200, 23);
+            txtNewPassword.TabIndex = 2;
+            txtNewPassword.TextChanged += txtNewPassword_TextChanged;
+            // 
+            // txtConfirmPassword
+            // 
+            txtConfirmPassword.Location = new Point(65, 253);
+            txtConfirmPassword.Name = "txtConfirmPassword";
+            txtConfirmPassword.PasswordChar = '*';
+            txtConfirmPassword.Size = new Size(200, 23);
+            txtConfirmPassword.TabIndex = 3;
+            txtConfirmPassword.TextChanged += txtConfirmPassword_TextChanged;
+            // 
+            // btnSendOtp
+            // 
+            btnSendOtp.Location = new Point(118, 128);
+            btnSendOtp.Name = "btnSendOtp";
+            btnSendOtp.Size = new Size(90, 25);
+            btnSendOtp.TabIndex = 4;
+            btnSendOtp.Text = "Send OTP";
+            btnSendOtp.Click += btnSendOtp_Click;
+            // 
+            // btnReset
+            // 
+            btnReset.Location = new Point(118, 282);
+            btnReset.Name = "btnReset";
+            btnReset.Size = new Size(90, 25);
+            btnReset.TabIndex = 5;
+            btnReset.Text = "Reset";
+            btnReset.Click += btnReset_Click;
+            // 
+            // btnBack
+            // 
+            btnBack.Location = new Point(118, 323);
+            btnBack.Name = "btnBack";
+            btnBack.Size = new Size(90, 25);
+            btnBack.TabIndex = 6;
+            btnBack.Text = "Back";
+            btnBack.Click += btnBack_Click;
+            // 
+            // ResetPassword
+            // 
+            ClientSize = new Size(350, 360);
+            Controls.Add(txtEmail);
+            Controls.Add(txtOtp);
+            Controls.Add(txtNewPassword);
+            Controls.Add(txtConfirmPassword);
+            Controls.Add(btnSendOtp);
+            Controls.Add(btnReset);
+            Controls.Add(btnBack);
+            MaximumSize = new Size(366, 399);
+            MinimumSize = new Size(366, 399);
+            Name = "ResetPassword";
+            Text = "ResetPassword";
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         private System.Windows.Forms.TextBox txtEmail;

@@ -33,7 +33,7 @@
             // 
             // txtUsername
             // 
-            txtUsername.Location = new Point(521, 139);
+            txtUsername.Location = new Point(531, 131);
             txtUsername.Name = "txtUsername";
             txtUsername.Size = new Size(200, 23);
             txtUsername.TabIndex = 0;
@@ -41,7 +41,7 @@
             // 
             // txtPassword
             // 
-            txtPassword.Location = new Point(521, 201);
+            txtPassword.Location = new Point(531, 179);
             txtPassword.Name = "txtPassword";
             txtPassword.PasswordChar = '*';
             txtPassword.Size = new Size(200, 23);
@@ -50,27 +50,28 @@
             // 
             // btnLogin
             // 
-            btnLogin.Location = new Point(578, 316);
+            btnLogin.Location = new Point(584, 264);
             btnLogin.Name = "btnLogin";
-            btnLogin.Size = new Size(90, 25);
+            btnLogin.Size = new Size(107, 28);
             btnLogin.TabIndex = 2;
             btnLogin.Text = "Login";
             btnLogin.Click += btnLogin_Click;
             // 
             // btnSignup
             // 
-            btnSignup.Location = new Point(578, 361);
+            btnSignup.Location = new Point(584, 312);
             btnSignup.Name = "btnSignup";
-            btnSignup.Size = new Size(90, 25);
+            btnSignup.Size = new Size(107, 28);
             btnSignup.TabIndex = 3;
             btnSignup.Text = "Sign Up";
             btnSignup.Click += btnSignup_Click;
             // 
             // btnForgot
             // 
-            btnForgot.Location = new Point(562, 249);
+            btnForgot.Font = new Font("Segoe UI", 7F);
+            btnForgot.Location = new Point(584, 219);
             btnForgot.Name = "btnForgot";
-            btnForgot.Size = new Size(120, 25);
+            btnForgot.Size = new Size(107, 22);
             btnForgot.TabIndex = 4;
             btnForgot.Text = "Forgot Password?";
             btnForgot.Click += btnForgot_Click;
@@ -83,6 +84,8 @@
             Controls.Add(btnLogin);
             Controls.Add(btnSignup);
             Controls.Add(btnForgot);
+            MaximumSize = new Size(816, 489);
+            MinimumSize = new Size(816, 489);
             Name = "Login";
             Text = "Login";
             ResumeLayout(false);

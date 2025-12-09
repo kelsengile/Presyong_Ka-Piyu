@@ -22,37 +22,50 @@
 
         private void InitializeComponent()
         {
-            this.txtOtp = new System.Windows.Forms.TextBox();
-            this.btnVerify = new System.Windows.Forms.Button();
-            this.btnResend = new System.Windows.Forms.Button();
-
-            // OTP Textbox
-            this.txtOtp.Location = new System.Drawing.Point(20, 20);
-            this.txtOtp.Size = new System.Drawing.Size(200, 23);
-            this.txtOtp.Name = "txtOtp";
-
-            // Verify Button
-            this.btnVerify.Location = new System.Drawing.Point(20, 60);
-            this.btnVerify.Size = new System.Drawing.Size(90, 25);
-            this.btnVerify.Text = "Verify OTP";
-            this.btnVerify.Click += new System.EventHandler(this.btnVerify_Click);
-
-            // Resend OTP Button
-            this.btnResend.Location = new System.Drawing.Point(130, 60);
-            this.btnResend.Size = new System.Drawing.Size(90, 25);
-            this.btnResend.Text = "Resend OTP";
-            this.btnResend.Click += new System.EventHandler(this.btnResend_Click);
-
-            this.ClientSize = new System.Drawing.Size(250, 120);
-            this.Controls.Add(this.txtOtp);
-            this.Controls.Add(this.btnVerify);
-            this.Controls.Add(this.btnResend);
-            this.Name = "SendOtp";
-
-            this.components = new System.ComponentModel.Container();
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "SendOtp";
+            txtOtp = new TextBox();
+            btnVerify = new Button();
+            btnResend = new Button();
+            SuspendLayout();
+            // 
+            // txtOtp
+            // 
+            txtOtp.Location = new Point(72, 131);
+            txtOtp.Name = "txtOtp";
+            txtOtp.Size = new Size(200, 23);
+            txtOtp.TabIndex = 0;
+            // 
+            // btnVerify
+            // 
+            btnVerify.Location = new Point(72, 192);
+            btnVerify.Name = "btnVerify";
+            btnVerify.Size = new Size(90, 25);
+            btnVerify.TabIndex = 1;
+            btnVerify.Text = "Verify OTP";
+            btnVerify.Click += btnVerify_Click;
+            // 
+            // btnResend
+            // 
+            btnResend.Location = new Point(182, 192);
+            btnResend.Name = "btnResend";
+            btnResend.Size = new Size(90, 25);
+            btnResend.TabIndex = 2;
+            btnResend.Text = "Resend OTP";
+            btnResend.Click += btnResend_Click;
+            // 
+            // SendOtp
+            // 
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(350, 360);
+            Controls.Add(txtOtp);
+            Controls.Add(btnVerify);
+            Controls.Add(btnResend);
+            MaximumSize = new Size(366, 399);
+            MinimumSize = new Size(366, 399);
+            Name = "SendOtp";
+            Text = "SendOtp";
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         private System.Windows.Forms.TextBox txtOtp;
