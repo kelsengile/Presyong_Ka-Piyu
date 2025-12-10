@@ -41,7 +41,7 @@ namespace Presyong_Ka_Piyu
 
                                 if (BCrypt.Net.BCrypt.Verify(password, storedHash))
                                 {
-                                    CustomMessageBox.Show("Signup successful!");
+                                    CustomMessageBox.Show("Log in successful!");
 
                                     Map main = new Map();
                                     main.Show();

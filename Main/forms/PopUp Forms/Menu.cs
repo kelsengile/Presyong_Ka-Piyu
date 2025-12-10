@@ -30,7 +30,8 @@ namespace Presyong_Ka_Piyu.Main.forms.PopUp_Forms
                     frm is Main_Forms.Help ||
                     frm is Map ||
                     frm is Settings ||
-                    frm is UserInfo)
+                    frm is UserInfo 
+                    )
                 {
                     frm.Close();
                 }
