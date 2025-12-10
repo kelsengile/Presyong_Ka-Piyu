@@ -54,7 +54,7 @@
             // 
             // CustomMessageBox
             // 
-            BackColor = SystemColors.ActiveCaption;
+            BackColor = SystemColors.GradientActiveCaption;
             ClientSize = new Size(280, 120);
             Controls.Add(lblMessage);
             Controls.Add(btnOK);

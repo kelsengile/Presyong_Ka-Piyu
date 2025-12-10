@@ -51,9 +51,11 @@
             // btnUserInfo
             // 
             btnUserInfo.BackColor = SystemColors.Control;
-            btnUserInfo.Location = new Point(118, 39);
+            btnUserInfo.FlatAppearance.BorderSize = 0;
+            btnUserInfo.FlatStyle = FlatStyle.Flat;
+            btnUserInfo.Location = new Point(118, 25);
             btnUserInfo.Name = "btnUserInfo";
-            btnUserInfo.Size = new Size(133, 67);
+            btnUserInfo.Size = new Size(133, 100);
             btnUserInfo.TabIndex = 1;
             btnUserInfo.Text = "User Info";
             btnUserInfo.UseVisualStyleBackColor = false;
@@ -62,9 +64,10 @@
             // btnMap
             // 
             btnMap.BackColor = SystemColors.Control;
-            btnMap.Location = new Point(53, 144);
+            btnMap.FlatAppearance.BorderSize = 0;
+            btnMap.Location = new Point(12, 144);
             btnMap.Name = "btnMap";
-            btnMap.Size = new Size(160, 35);
+            btnMap.Size = new Size(239, 35);
             btnMap.TabIndex = 2;
             btnMap.Text = "Map";
             btnMap.UseVisualStyleBackColor = false;
@@ -73,9 +76,10 @@
             // btnAbout
             // 
             btnAbout.BackColor = SystemColors.Control;
-            btnAbout.Location = new Point(53, 185);
+            btnAbout.FlatAppearance.BorderSize = 0;
+            btnAbout.Location = new Point(12, 185);
             btnAbout.Name = "btnAbout";
-            btnAbout.Size = new Size(160, 35);
+            btnAbout.Size = new Size(239, 35);
             btnAbout.TabIndex = 3;
             btnAbout.Text = "About";
             btnAbout.UseVisualStyleBackColor = false;
@@ -84,9 +88,10 @@
             // btnSettings
             // 
             btnSettings.BackColor = SystemColors.Control;
-            btnSettings.Location = new Point(53, 226);
+            btnSettings.FlatAppearance.BorderSize = 0;
+            btnSettings.Location = new Point(12, 226);
             btnSettings.Name = "btnSettings";
-            btnSettings.Size = new Size(160, 35);
+            btnSettings.Size = new Size(239, 35);
             btnSettings.TabIndex = 4;
             btnSettings.Text = "Settings";
             btnSettings.UseVisualStyleBackColor = false;
@@ -95,9 +100,10 @@
             // btnFeedback
             // 
             btnFeedback.BackColor = SystemColors.Control;
-            btnFeedback.Location = new Point(53, 267);
+            btnFeedback.FlatAppearance.BorderSize = 0;
+            btnFeedback.Location = new Point(12, 267);
             btnFeedback.Name = "btnFeedback";
-            btnFeedback.Size = new Size(160, 35);
+            btnFeedback.Size = new Size(239, 35);
             btnFeedback.TabIndex = 5;
             btnFeedback.Text = "Feedback";
             btnFeedback.UseVisualStyleBackColor = false;
@@ -106,9 +112,10 @@
             // btnHelp
             // 
             btnHelp.BackColor = SystemColors.Control;
-            btnHelp.Location = new Point(53, 308);
+            btnHelp.FlatAppearance.BorderSize = 0;
+            btnHelp.Location = new Point(12, 308);
             btnHelp.Name = "btnHelp";
-            btnHelp.Size = new Size(160, 35);
+            btnHelp.Size = new Size(239, 35);
             btnHelp.TabIndex = 6;
             btnHelp.Text = "Help";
             btnHelp.UseVisualStyleBackColor = false;

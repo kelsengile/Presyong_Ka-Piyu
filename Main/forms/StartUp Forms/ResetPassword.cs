@@ -45,30 +45,56 @@ namespace Presyong_Ka_Piyu.Main.forms
                 return;
             }
 
-            // Generate OTP
-            generatedOtp = new Random().Next(100000, 999999).ToString();
-
             try
             {
-                string senderEmail = "presyongkapiyu@gmail.com";
-                string senderPassword = "apof xxjk awdr xivt";
+                using (SQLiteConnection conn = new SQLiteConnection(dbPath))
+                {
+                    conn.Open();
 
-                MailMessage mail = new MailMessage();
-                mail.From = new MailAddress(senderEmail);
-                mail.To.Add(email);
-                mail.Subject = "Your Password Reset OTP";
-                mail.Body = $"Your OTP is: {generatedOtp}";
+                    // Check if email exists
+                    string checkQuery = "SELECT COUNT(*) FROM Users WHERE Email = @Email";
+                    using (SQLiteCommand checkCmd = new SQLiteCommand(checkQuery, conn))
+                    {
+                        checkCmd.Parameters.AddWithValue("@Email", email);
+                        long count = (long)checkCmd.ExecuteScalar();
 
-                SmtpClient smtp = new SmtpClient("smtp.gmail.com", 587);
-                smtp.Credentials = new NetworkCredential(senderEmail, senderPassword);
-                smtp.EnableSsl = true;
+                        if (count == 0)
+                        {
+                            CustomMessageBox.Show("Email not found.");
+                            return;
+                        }
+                    }
 
-                smtp.Send(mail);
-                CustomMessageBox.Show("OTP sent to your email.");
+                    // Generate OTP
+                    generatedOtp = new Random().Next(100000, 999999).ToString();
+
+                    try
+                    {
+                        string senderEmail = "presyongkapiyu@gmail.com";
+                        string senderPassword = "apof xxjk awdr xivt";
+
+                        MailMessage mail = new MailMessage();
+                        mail.From = new MailAddress(senderEmail);
+                        mail.To.Add(email);
+                        mail.Subject = "Your Password Reset OTP";
+                        mail.Body = $"Your OTP is: {generatedOtp}";
+
+                        SmtpClient smtp = new SmtpClient("smtp.gmail.com", 587);
+                        smtp.Credentials = new NetworkCredential(senderEmail, senderPassword);
+                        smtp.EnableSsl = true;
+
+                        smtp.Send(mail);
+                        CustomMessageBox.Show("OTP sent to your email.");
+                    }
+                    catch (Exception ex)
+                    {
+                        CustomMessageBox.Show("Failed to send OTP: " + ex.Message);
+                    }
+                }
             }
             catch (Exception ex)
             {
-                CustomMessageBox.Show("Failed to send OTP: " + ex.Message);
+                CustomMessageBox.Show("Error: " + ex.Message);
             }
         }
 
