@@ -124,7 +124,7 @@
             // Menu
             // 
             BackColor = SystemColors.GradientActiveCaption;
-            ClientSize = new Size(263, 368);
+            ClientSize = new Size(264, 371);
             Controls.Add(picProfile);
             Controls.Add(btnUserInfo);
             Controls.Add(btnMap);
@@ -134,6 +134,8 @@
             Controls.Add(btnHelp);
             FormBorderStyle = FormBorderStyle.FixedSingle;
             MaximizeBox = false;
+            MaximumSize = new Size(280, 410);
+            MinimumSize = new Size(280, 410);
             Name = "Menu";
             Text = "Menu";
             ((System.ComponentModel.ISupportInitialize)picProfile).EndInit();

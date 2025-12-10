@@ -1,4 +1,6 @@
-﻿namespace Presyong_Ka_Piyu.Main.forms.Main_Forms
+﻿
+
+namespace Presyong_Ka_Piyu.Main.forms.Main_Forms
 {
     partial class Settings
     {
@@ -33,6 +35,8 @@
             btnAdd = new Button();
             label1 = new Label();
             panel1 = new Panel();
+            AccountSettinglabel = new Label();
+            btnuserinfo = new Button();
             panel1.SuspendLayout();
             SuspendLayout();
             // 
@@ -73,37 +77,61 @@
             // 
             label1.AutoSize = true;
             label1.BackColor = SystemColors.GradientActiveCaption;
-            label1.Font = new Font("Segoe UI", 12F);
-            label1.Location = new Point(102, 30);
+            label1.Font = new Font("Segoe UI", 15F);
+            label1.Location = new Point(92, 27);
             label1.Name = "label1";
-            label1.Size = new Size(135, 21);
+            label1.Size = new Size(264, 28);
             label1.TabIndex = 4;
-            label1.Text = "Presyong_Ka-Piyu";
+            label1.Text = "Settings  |  Presyong_Ka-Piyu";
             label1.Click += label1_Click;
             // 
             // panel1
             // 
             panel1.BackColor = SystemColors.GradientActiveCaption;
             panel1.Controls.Add(btnSearch);
+            panel1.Controls.Add(label1);
             panel1.Location = new Point(-5, 0);
             panel1.Name = "panel1";
             panel1.Size = new Size(789, 85);
             panel1.TabIndex = 5;
             // 
-            // About
+            // AccountSettinglabel
+            // 
+            AccountSettinglabel.AutoSize = true;
+            AccountSettinglabel.Font = new Font("Segoe UI", 13F);
+            AccountSettinglabel.Location = new Point(53, 119);
+            AccountSettinglabel.Name = "AccountSettinglabel";
+            AccountSettinglabel.Size = new Size(313, 25);
+            AccountSettinglabel.TabIndex = 6;
+            AccountSettinglabel.Text = "Account Settings  |  User Information: ";
+            AccountSettinglabel.Click += label2_Click;
+            // 
+            // btnuserinfo
+            // 
+            btnuserinfo.Location = new Point(87, 156);
+            btnuserinfo.Name = "btnuserinfo";
+            btnuserinfo.Size = new Size(627, 23);
+            btnuserinfo.TabIndex = 7;
+            btnuserinfo.Text = "Open User Information";
+            btnuserinfo.UseVisualStyleBackColor = true;
+            btnuserinfo.Click += btnuserinfo_Click;
+            // 
+            // Settings
             // 
             BackColor = SystemColors.ActiveCaption;
             ClientSize = new Size(784, 661);
-            Controls.Add(label1);
+            Controls.Add(btnuserinfo);
+            Controls.Add(AccountSettinglabel);
             Controls.Add(btnAdd);
             Controls.Add(btnPanel);
             Controls.Add(panel1);
             MaximumSize = new Size(800, 700);
             MinimumSize = new Size(800, 700);
-            Name = "About";
+            Name = "Settings";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "About";
+            Text = "Settings";
             panel1.ResumeLayout(false);
+            panel1.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
 
@@ -120,5 +148,8 @@
         
 
         #endregion
+
+        private Label AccountSettinglabel;
+        private Button btnuserinfo;
     }
 }

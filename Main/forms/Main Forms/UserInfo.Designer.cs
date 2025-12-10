@@ -73,39 +73,39 @@
             // 
             label1.AutoSize = true;
             label1.BackColor = SystemColors.GradientActiveCaption;
-            label1.Font = new Font("Segoe UI", 12F);
-            label1.Location = new Point(102, 30);
+            label1.Font = new Font("Segoe UI", 15F);
+            label1.Location = new Point(92, 24);
             label1.Name = "label1";
-            label1.Size = new Size(135, 21);
+            label1.Size = new Size(340, 28);
             label1.TabIndex = 4;
-            label1.Text = "Presyong_Ka-Piyu";
+            label1.Text = "User Information  |  Presyong_Ka-Piyu";
             label1.Click += label1_Click;
             // 
             // panel1
             // 
             panel1.BackColor = SystemColors.GradientActiveCaption;
+            panel1.Controls.Add(label1);
             panel1.Controls.Add(btnSearch);
             panel1.Location = new Point(-5, 0);
             panel1.Name = "panel1";
             panel1.Size = new Size(789, 85);
             panel1.TabIndex = 5;
             // 
-            // About
+            // UserInfo
             // 
             BackColor = SystemColors.ActiveCaption;
             ClientSize = new Size(784, 661);
-            Controls.Add(label1);
             Controls.Add(btnAdd);
             Controls.Add(btnPanel);
             Controls.Add(panel1);
             MaximumSize = new Size(800, 700);
             MinimumSize = new Size(800, 700);
-            Name = "About";
+            Name = "UserInfo";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "About";
+            Text = "User Info";
             panel1.ResumeLayout(false);
+            panel1.PerformLayout();
             ResumeLayout(false);
-            PerformLayout();
 
 
         }

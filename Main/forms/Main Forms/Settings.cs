@@ -13,6 +13,9 @@ namespace Presyong_Ka_Piyu.Main.forms.Main_Forms
         public Settings()
         {
             InitializeComponent();
+
+
+
         }
 
 
@@ -77,6 +80,26 @@ namespace Presyong_Ka_Piyu.Main.forms.Main_Forms
         }
 
 
+        private void UserInfoclose()
+        {
+            for (int i = Application.OpenForms.Count - 1; i >= 0; i--)
+            {
+                Form frm = Application.OpenForms[i];
+                if (frm is Add)
+                {
+                    frm.Close();
+                }
+            }
+        }
+
+        private void btnuserinfo_Click(object sender, EventArgs e)
+        {
+            UserInfoclose();
+            UserInfo UserInfo = new UserInfo();
+            UserInfo.Show();
+        }
+
+
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
@@ -87,5 +110,17 @@ namespace Presyong_Ka_Piyu.Main.forms.Main_Forms
         {
 
         }
+
+        private void Settings_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        
     }
 }
