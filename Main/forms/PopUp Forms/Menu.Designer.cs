@@ -1,6 +1,6 @@
 ﻿namespace Presyong_Ka_Piyu.Main.forms.PopUp_Forms
 {
-    partial class Panel
+    partial class Menu
     {
         /// <summary>
         /// Required designer variable.
@@ -102,7 +102,7 @@
             btnHelp.Text = "Help";
             btnHelp.Click += btnHelp_Click;
             // 
-            // Panel
+            // Menu
             // 
             ClientSize = new Size(263, 368);
             Controls.Add(picProfile);
@@ -114,7 +114,7 @@
             Controls.Add(btnHelp);
             FormBorderStyle = FormBorderStyle.FixedSingle;
             MaximizeBox = false;
-            Name = "Panel";
+            Name = "Menu";
             Text = "Menu";
             ((System.ComponentModel.ISupportInitialize)picProfile).EndInit();
             ResumeLayout(false);

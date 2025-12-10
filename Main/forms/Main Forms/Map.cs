@@ -20,7 +20,7 @@ namespace Presyong_Ka_Piyu.Main.forms
         // Open the Panel Form
         private void btnPanel_Click(object sender, EventArgs e)
         {
-            PopUp_Forms.Panel panel = new PopUp_Forms.Panel();
+            PopUp_Forms.Menu panel = new PopUp_Forms.Menu();
             panel.Show();
         }
 
@@ -36,6 +36,11 @@ namespace Presyong_Ka_Piyu.Main.forms
         {
             Add add = new Add();
             add.Show();
+        }
+
+        private void mapBox_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

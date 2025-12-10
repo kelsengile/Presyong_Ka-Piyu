@@ -38,25 +38,26 @@
             // mapBox
             // 
             mapBox.Image = Properties.Resources.MapImagePrototype;
-            mapBox.Location = new Point(104, 105);
+            mapBox.Location = new Point(-5, 79);
             mapBox.Name = "mapBox";
-            mapBox.Size = new Size(798, 583);
+            mapBox.Size = new Size(796, 583);
             mapBox.SizeMode = PictureBoxSizeMode.Zoom;
             mapBox.TabIndex = 0;
             mapBox.TabStop = false;
+            mapBox.Click += mapBox_Click;
             // 
             // btnPanel
             // 
-            btnPanel.Location = new Point(-2, 38);
+            btnPanel.Location = new Point(-5, 12);
             btnPanel.Name = "btnPanel";
-            btnPanel.Size = new Size(80, 48);
+            btnPanel.Size = new Size(94, 61);
             btnPanel.TabIndex = 1;
             btnPanel.Text = "Menu";
             btnPanel.Click += btnPanel_Click;
             // 
             // btnSearch
             // 
-            btnSearch.Location = new Point(770, 47);
+            btnSearch.Location = new Point(542, 27);
             btnSearch.Name = "btnSearch";
             btnSearch.Size = new Size(218, 30);
             btnSearch.TabIndex = 2;
@@ -65,7 +66,7 @@
             // 
             // btnAdd
             // 
-            btnAdd.Location = new Point(908, 658);
+            btnAdd.Location = new Point(680, 607);
             btnAdd.Name = "btnAdd";
             btnAdd.Size = new Size(80, 30);
             btnAdd.TabIndex = 3;
@@ -74,11 +75,13 @@
             // 
             // Map
             // 
-            ClientSize = new Size(1000, 700);
+            ClientSize = new Size(784, 661);
             Controls.Add(btnAdd);
             Controls.Add(mapBox);
             Controls.Add(btnPanel);
             Controls.Add(btnSearch);
+            MaximumSize = new Size(800, 700);
+            MinimumSize = new Size(800, 700);
             Name = "Map";
             Text = "Campus Map";
             ((System.ComponentModel.ISupportInitialize)mapBox).EndInit();

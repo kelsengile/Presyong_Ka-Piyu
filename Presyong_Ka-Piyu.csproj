@@ -18,4 +18,10 @@
     <Folder Include="Main\data\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Compile Update="Main\forms\Main Forms\Map - Copy.cs">
+      <SubType>Form</SubType>
+    </Compile>
+  </ItemGroup>
+
 </Project>
