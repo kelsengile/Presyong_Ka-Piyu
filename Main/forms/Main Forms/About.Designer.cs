@@ -72,7 +72,7 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.BackColor = SystemColors.ActiveCaption;
+            label1.BackColor = SystemColors.GradientActiveCaption;
             label1.Font = new Font("Segoe UI", 12F);
             label1.Location = new Point(102, 30);
             label1.Name = "label1";
@@ -83,7 +83,7 @@
             // 
             // panel1
             // 
-            panel1.BackColor = SystemColors.ActiveCaption;
+            panel1.BackColor = SystemColors.GradientActiveCaption;
             panel1.Controls.Add(btnSearch);
             panel1.Location = new Point(-5, 0);
             panel1.Name = "panel1";
@@ -92,7 +92,7 @@
             // 
             // About
             // 
-            BackColor = SystemColors.GradientActiveCaption;
+            BackColor = SystemColors.ActiveCaption;
             ClientSize = new Size(784, 661);
             Controls.Add(label1);
             Controls.Add(btnAdd);

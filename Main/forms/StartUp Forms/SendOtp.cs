@@ -99,5 +99,15 @@ namespace Presyong_Ka_Piyu.Main.forms
         {
             SendOTPToEmail();
         }
+
+        private void OTPverlabel_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

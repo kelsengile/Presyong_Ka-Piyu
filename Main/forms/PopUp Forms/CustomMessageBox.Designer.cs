@@ -26,33 +26,43 @@
         /// Required method for Designer support - do not modify
         /// the contents of this method with the code editor.
         /// </summary>
-       
+
         private void InitializeComponent()
         {
-            this.lblMessage = new System.Windows.Forms.Label();
-            this.btnOK = new System.Windows.Forms.Button();
-
-            // Label
-            this.lblMessage.AutoSize = false;
-            this.lblMessage.Location = new System.Drawing.Point(10, 10);
-            this.lblMessage.Size = new System.Drawing.Size(260, 60);
-            this.lblMessage.Name = "lblMessage";
-            this.lblMessage.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-
-            // OK Button
-            this.btnOK.Location = new System.Drawing.Point(95, 80);
-            this.btnOK.Size = new System.Drawing.Size(80, 25);
-            this.btnOK.Name = "btnOK";
-            this.btnOK.Text = "OK";
-            this.btnOK.Click += new System.EventHandler(this.btnOK_Click);
-
-            // CustomMessageBox form
-            this.ClientSize = new System.Drawing.Size(280, 120);
-            this.Controls.Add(this.lblMessage);
-            this.Controls.Add(this.btnOK);
-            this.Name = "CustomMessageBox";
-            this.Text = "Message";
-            this.Load += new System.EventHandler(this.CustomMessageBox_Load);
+            lblMessage = new Label();
+            btnOK = new Button();
+            SuspendLayout();
+            // 
+            // lblMessage
+            // 
+            lblMessage.Location = new Point(10, 10);
+            lblMessage.Name = "lblMessage";
+            lblMessage.Size = new Size(260, 60);
+            lblMessage.TabIndex = 0;
+            lblMessage.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // btnOK
+            // 
+            btnOK.BackColor = SystemColors.Control;
+            btnOK.Location = new Point(95, 80);
+            btnOK.Name = "btnOK";
+            btnOK.Size = new Size(80, 25);
+            btnOK.TabIndex = 1;
+            btnOK.Text = "OK";
+            btnOK.UseVisualStyleBackColor = false;
+            btnOK.Click += btnOK_Click;
+            // 
+            // CustomMessageBox
+            // 
+            BackColor = SystemColors.ActiveCaption;
+            ClientSize = new Size(280, 120);
+            Controls.Add(lblMessage);
+            Controls.Add(btnOK);
+            Name = "CustomMessageBox";
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "Message";
+            Load += CustomMessageBox_Load;
+            ResumeLayout(false);
         }
 
         private System.Windows.Forms.Label lblMessage;

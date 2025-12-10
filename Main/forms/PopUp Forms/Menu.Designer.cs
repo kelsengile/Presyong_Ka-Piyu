@@ -50,60 +50,73 @@
             // 
             // btnUserInfo
             // 
+            btnUserInfo.BackColor = SystemColors.Control;
             btnUserInfo.Location = new Point(118, 39);
             btnUserInfo.Name = "btnUserInfo";
             btnUserInfo.Size = new Size(133, 67);
             btnUserInfo.TabIndex = 1;
             btnUserInfo.Text = "User Info";
+            btnUserInfo.UseVisualStyleBackColor = false;
             btnUserInfo.Click += btnUserInfo_Click;
             // 
             // btnMap
             // 
+            btnMap.BackColor = SystemColors.Control;
             btnMap.Location = new Point(53, 144);
             btnMap.Name = "btnMap";
             btnMap.Size = new Size(160, 35);
             btnMap.TabIndex = 2;
             btnMap.Text = "Map";
+            btnMap.UseVisualStyleBackColor = false;
             btnMap.Click += btnMap_Click;
             // 
             // btnAbout
             // 
+            btnAbout.BackColor = SystemColors.Control;
             btnAbout.Location = new Point(53, 185);
             btnAbout.Name = "btnAbout";
             btnAbout.Size = new Size(160, 35);
             btnAbout.TabIndex = 3;
             btnAbout.Text = "About";
+            btnAbout.UseVisualStyleBackColor = false;
             btnAbout.Click += btnAbout_Click;
             // 
             // btnSettings
             // 
+            btnSettings.BackColor = SystemColors.Control;
             btnSettings.Location = new Point(53, 226);
             btnSettings.Name = "btnSettings";
             btnSettings.Size = new Size(160, 35);
             btnSettings.TabIndex = 4;
             btnSettings.Text = "Settings";
+            btnSettings.UseVisualStyleBackColor = false;
             btnSettings.Click += btnSettings_Click;
             // 
             // btnFeedback
             // 
+            btnFeedback.BackColor = SystemColors.Control;
             btnFeedback.Location = new Point(53, 267);
             btnFeedback.Name = "btnFeedback";
             btnFeedback.Size = new Size(160, 35);
             btnFeedback.TabIndex = 5;
             btnFeedback.Text = "Feedback";
+            btnFeedback.UseVisualStyleBackColor = false;
             btnFeedback.Click += btnFeedback_Click;
             // 
             // btnHelp
             // 
+            btnHelp.BackColor = SystemColors.Control;
             btnHelp.Location = new Point(53, 308);
             btnHelp.Name = "btnHelp";
             btnHelp.Size = new Size(160, 35);
             btnHelp.TabIndex = 6;
             btnHelp.Text = "Help";
+            btnHelp.UseVisualStyleBackColor = false;
             btnHelp.Click += btnHelp_Click;
             // 
             // Menu
             // 
+            BackColor = SystemColors.GradientActiveCaption;
             ClientSize = new Size(263, 368);
             Controls.Add(picProfile);
             Controls.Add(btnUserInfo);
