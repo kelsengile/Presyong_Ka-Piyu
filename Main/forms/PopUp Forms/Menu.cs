@@ -9,9 +9,9 @@ using System.Windows.Forms;
 
 namespace Presyong_Ka_Piyu.Main.forms.PopUp_Forms
 {
-    public partial class Panel : Form
+    public partial class Menu : Form
     {
-        public Panel()
+        public Menu()
         {
             InitializeComponent();
 
@@ -19,18 +19,39 @@ namespace Presyong_Ka_Piyu.Main.forms.PopUp_Forms
         }
 
         
+        private void close()
+        {
+            for (int i = Application.OpenForms.Count - 1; i >= 0; i--)
+            {
+                Form frm = Application.OpenForms[i];
 
+                if (frm is About ||
+                    frm is Feedback ||
+                    frm is Main_Forms.Help ||
+                    frm is Map ||
+                    frm is Settings ||
+                    frm is UserInfo 
+                    )
+                {
+                    frm.Close();
+                }
+            }
+        }
 
 
         private void btnUserInfo_Click(object sender, EventArgs e)
         {
-            UserInfo f = new UserInfo();
-            f.Show();
+            close();
+
+            UserInfo userinfo = new UserInfo();
+            userinfo.Show();
             
         }
 
         private void btnMap_Click(object sender, EventArgs e)
         {
+            close();
+
             Map map = new Map();
             map.Show();
             
@@ -38,31 +59,35 @@ namespace Presyong_Ka_Piyu.Main.forms.PopUp_Forms
 
         private void btnSettings_Click(object sender, EventArgs e)
         {
-            Settings f = new Settings();
-            f.Show();
+            close();
+
+            Settings settings = new Settings();
+            settings.Show();
             
         }
 
         private void btnFeedback_Click(object sender, EventArgs e)
         {
-            Feedback f = new Feedback();
-            f.Show();
-            
+            close();
 
+            Feedback feedback = new Feedback();
+            feedback.Show();
         }
 
         private void btnHelp_Click(object sender, EventArgs e)
         {
-            Main_Forms.Help f = new Main_Forms.Help();
-            f.Show();
-            ;
+            close();
 
+            Main_Forms.Help help = new Main_Forms.Help();
+            help.Show();
         }
 
         private void btnAbout_Click(object sender, EventArgs e)
         {
-            About f = new About();
-            f.Show();
+            close();
+
+            About about = new About();
+            about.Show();
             
         }
     }

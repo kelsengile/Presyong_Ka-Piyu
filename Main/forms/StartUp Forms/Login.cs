@@ -41,7 +41,7 @@ namespace Presyong_Ka_Piyu
 
                                 if (BCrypt.Net.BCrypt.Verify(password, storedHash))
                                 {
-                                    CustomMessageBox.Show("Signup successful!");
+                                    CustomMessageBox.Show("Log in successful!");
 
                                     Map main = new Map();
                                     main.Show();
@@ -73,7 +73,7 @@ namespace Presyong_Ka_Piyu
         {
             Signup signupForm = new Signup();
             signupForm.Show();
-        
+
             this.Hide();
         }
 
@@ -96,6 +96,26 @@ namespace Presyong_Ka_Piyu
         }
 
         private void txtUsername_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void radioButton1_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
         {
 
         }
