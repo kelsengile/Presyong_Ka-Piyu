@@ -1,4 +1,5 @@
 ﻿using Presyong_Ka_Piyu.Main.forms.PopUp_Forms;
+using Presyong_Ka_Piyu.Main.programs;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,6 +15,7 @@ namespace Presyong_Ka_Piyu.Main.forms.Main_Forms
         public About()
         {
             InitializeComponent();
+            ThemeManager.ApplyTheme(this);
             this.FormBorderStyle = FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
         }

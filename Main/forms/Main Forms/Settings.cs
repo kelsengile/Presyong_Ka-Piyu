@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Presyong_Ka_Piyu.Main.forms.PopUp_Forms;
+using Presyong_Ka_Piyu.Main.programs;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,10 +15,40 @@ namespace Presyong_Ka_Piyu.Main.forms.Main_Forms
         public Settings()
         {
             InitializeComponent();
-
+            chkDarkMode.Checked = ThemeManager.IsDarkMode;
+            ThemeManager.ApplyTheme(this);
 
 
         }
+
+        private void chkDarkMode_CheckedChanged(object sender, EventArgs e)
+        {
+            ThemeManager.SetDarkMode(chkDarkMode.Checked);
+            ThemeManager.ApplyTheme(this);
+
+            // Update all open forms
+            foreach (Form frm in Application.OpenForms)
+                ThemeManager.ApplyTheme(frm);
+        }
+
+        private void btnChangeFont_Click(object sender, EventArgs e)
+        {
+            FontDialog fd = new FontDialog();
+            fd.Font = new Font(ThemeManager.SelectedFont, 10);
+
+            if (fd.ShowDialog() == DialogResult.OK)
+            {
+                ThemeManager.SetFont(fd.Font.Name);
+
+                // Apply theme again globally
+                foreach (Form f in Application.OpenForms)
+                    ThemeManager.ApplyTheme(f);
+            }
+        }
+
+
+
+
 
 
         // Open the Panel Form
@@ -85,7 +117,8 @@ namespace Presyong_Ka_Piyu.Main.forms.Main_Forms
             for (int i = Application.OpenForms.Count - 1; i >= 0; i--)
             {
                 Form frm = Application.OpenForms[i];
-                if (frm is Add)
+                if (frm is UserInfo ||
+                    frm is Settings)
                 {
                     frm.Close();
                 }
@@ -121,6 +154,26 @@ namespace Presyong_Ka_Piyu.Main.forms.Main_Forms
 
         }
 
-        
+        private void label2_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ViewTablesbutton_Click(object sender, EventArgs e)
+        {
+            DataBaseViewer databaseviewer = new DataBaseViewer();
+            databaseviewer.Show();
+        }
+
+        private void DeleteDatabutton_Click(object sender, EventArgs e)
+        {
+            ConfirmDelete confirmDelete = new ConfirmDelete();
+            confirmDelete.Show();
+        }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

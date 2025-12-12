@@ -2,8 +2,11 @@
 <SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="Presyong_Ka_Piyu.Properties" GeneratedClassName="Settings">
   <Profiles />
   <Settings>
-    <Setting Name="DarkModeEnabled" Type="System.Boolean" Scope="User">
+    <Setting Name="DarkMode" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="AppFont" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Segoe UI</Value>
     </Setting>
   </Settings>
 </SettingsFile>

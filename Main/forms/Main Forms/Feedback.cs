@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Presyong_Ka_Piyu.Main.programs;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,6 +14,7 @@ namespace Presyong_Ka_Piyu.Main.forms.Main_Forms
         public Feedback()
         {
             InitializeComponent();
+            ThemeManager.ApplyTheme(this);
         }
 
 

@@ -26,12 +26,24 @@ namespace Presyong_Ka_Piyu.Properties {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("False")]
-        public bool DarkModeEnabled {
+        public bool DarkMode {
             get {
-                return ((bool)(this["DarkModeEnabled"]));
+                return ((bool)(this["DarkMode"]));
             }
             set {
-                this["DarkModeEnabled"] = value;
+                this["DarkMode"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Segoe UI")]
+        public string AppFont {
+            get {
+                return ((string)(this["AppFont"]));
+            }
+            set {
+                this["AppFont"] = value;
             }
         }
     }

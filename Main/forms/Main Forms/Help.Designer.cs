@@ -73,17 +73,18 @@
             // 
             label1.AutoSize = true;
             label1.BackColor = SystemColors.GradientActiveCaption;
+            label1.BorderStyle = BorderStyle.Fixed3D;
             label1.Font = new Font("Segoe UI", 15F);
             label1.Location = new Point(92, 24);
             label1.Name = "label1";
-            label1.Size = new Size(224, 28);
+            label1.Size = new Size(226, 30);
             label1.TabIndex = 4;
             label1.Text = "Help | Presyong_Ka-Piyu";
             label1.Click += label1_Click;
             // 
             // panel1
             // 
-            panel1.BackColor = SystemColors.GradientActiveCaption;
+            panel1.BackColor = SystemColors.ActiveCaption;
             panel1.Controls.Add(label1);
             panel1.Controls.Add(btnSearch);
             panel1.Location = new Point(-5, 0);
@@ -93,7 +94,7 @@
             // 
             // Help
             // 
-            BackColor = SystemColors.ActiveCaption;
+            BackColor = SystemColors.GradientActiveCaption;
             ClientSize = new Size(784, 661);
             Controls.Add(btnAdd);
             Controls.Add(btnPanel);

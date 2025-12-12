@@ -1,4 +1,5 @@
 ﻿using Presyong_Ka_Piyu.Main.forms.Main_Forms;
+using Presyong_Ka_Piyu.Main.programs;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,8 +15,8 @@ namespace Presyong_Ka_Piyu.Main.forms.PopUp_Forms
         public Menu()
         {
             InitializeComponent();
+            ThemeManager.ApplyTheme(this);
 
-            
         }
 
         

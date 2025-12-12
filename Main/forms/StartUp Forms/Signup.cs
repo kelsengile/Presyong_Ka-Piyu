@@ -22,6 +22,7 @@ namespace Presyong_Ka_Piyu
         public Signup()
         {
             InitializeComponent();
+
         }
 
         private void btnSignup_Click(object sender, EventArgs e)

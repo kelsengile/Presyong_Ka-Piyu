@@ -21,7 +21,9 @@ namespace Presyong_Ka_Piyu.Main.forms
         public SendOtp()
         {
             InitializeComponent();
+
             SendOTPToEmail();
+
         }
 
         private void SendOTPToEmail()

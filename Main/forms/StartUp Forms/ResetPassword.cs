@@ -22,6 +22,8 @@ namespace Presyong_Ka_Piyu.Main.forms
         public ResetPassword()
         {
             InitializeComponent();
+
+
         }
 
         private bool IsValidEmail(string email)
