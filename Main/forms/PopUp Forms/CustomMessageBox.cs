@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Presyong_Ka_Piyu.Main.programs;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -14,7 +15,9 @@ namespace Presyong_Ka_Piyu.Main.forms
         private static string messageToShow = "";
         public CustomMessageBox()
         {
+
             InitializeComponent();
+            ThemeManager.ApplyTheme(this);
         }
 
         public static void Show(string message)

@@ -1,16 +1,19 @@
-﻿using System;
+﻿using BCrypt.Net;
+using Presyong_Ka_Piyu.Main.forms.Main_Forms;
+using Presyong_Ka_Piyu.Main.forms.PopUp_Forms;
+using Presyong_Ka_Piyu.Main.programs;
+using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Text;
-using System.Windows.Forms;
-using System;
 using System.Data.SQLite;
+using System.Drawing;
 using System.Net;
 using System.Net.Mail;
+using System.Text;
 using System.Windows.Forms;
-using BCrypt.Net;
+using System.Windows.Forms;
 
 namespace Presyong_Ka_Piyu.Main.forms
 {
@@ -22,6 +25,8 @@ namespace Presyong_Ka_Piyu.Main.forms
         public ResetPassword()
         {
             InitializeComponent();
+            ThemeManager.ApplyTheme(this);
+
         }
 
         private bool IsValidEmail(string email)
@@ -45,30 +50,56 @@ namespace Presyong_Ka_Piyu.Main.forms
                 return;
             }
 
-            // Generate OTP
-            generatedOtp = new Random().Next(100000, 999999).ToString();
-
             try
             {
-                string senderEmail = "presyongkapiyu@gmail.com";
-                string senderPassword = "apof xxjk awdr xivt";
+                using (SQLiteConnection conn = new SQLiteConnection(dbPath))
+                {
+                    conn.Open();
 
-                MailMessage mail = new MailMessage();
-                mail.From = new MailAddress(senderEmail);
-                mail.To.Add(email);
-                mail.Subject = "Your Password Reset OTP";
-                mail.Body = $"Your OTP is: {generatedOtp}";
+                    // Check if email exists
+                    string checkQuery = "SELECT COUNT(*) FROM Users WHERE Email = @Email";
+                    using (SQLiteCommand checkCmd = new SQLiteCommand(checkQuery, conn))
+                    {
+                        checkCmd.Parameters.AddWithValue("@Email", email);
+                        long count = (long)checkCmd.ExecuteScalar();
 
-                SmtpClient smtp = new SmtpClient("smtp.gmail.com", 587);
-                smtp.Credentials = new NetworkCredential(senderEmail, senderPassword);
-                smtp.EnableSsl = true;
+                        if (count == 0)
+                        {
+                            CustomMessageBox.Show("Email not found.");
+                            return;
+                        }
+                    }
 
-                smtp.Send(mail);
-                CustomMessageBox.Show("OTP sent to your email.");
+                    // Generate OTP
+                    generatedOtp = new Random().Next(100000, 999999).ToString();
+
+                    try
+                    {
+                        string senderEmail = "presyongkapiyu@gmail.com";
+                        string senderPassword = "apof xxjk awdr xivt";
+
+                        MailMessage mail = new MailMessage();
+                        mail.From = new MailAddress(senderEmail);
+                        mail.To.Add(email);
+                        mail.Subject = "Your Password Reset OTP";
+                        mail.Body = $"Your OTP is: {generatedOtp}";
+
+                        SmtpClient smtp = new SmtpClient("smtp.gmail.com", 587);
+                        smtp.Credentials = new NetworkCredential(senderEmail, senderPassword);
+                        smtp.EnableSsl = true;
+
+                        smtp.Send(mail);
+                        CustomMessageBox.Show("OTP sent to your email.");
+                    }
+                    catch (Exception ex)
+                    {
+                        CustomMessageBox.Show("Failed to send OTP: " + ex.Message);
+                    }
+                }
             }
             catch (Exception ex)
             {
-                CustomMessageBox.Show("Failed to send OTP: " + ex.Message);
+                CustomMessageBox.Show("Error: " + ex.Message);
             }
         }
 
@@ -147,6 +178,9 @@ namespace Presyong_Ka_Piyu.Main.forms
 
         private void btnBack_Click(object sender, EventArgs e)
         {
+
+            
+
             Login login = new Login();
             login.Show();
             this.Hide();
@@ -176,5 +210,7 @@ namespace Presyong_Ka_Piyu.Main.forms
         {
 
         }
+
+        
     }
 }

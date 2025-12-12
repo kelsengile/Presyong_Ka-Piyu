@@ -28,20 +28,97 @@
         /// </summary>
         private void InitializeComponent()
         {
+            btnPanel = new Button();
+            btnSearch = new Button();
+            btnAdd = new Button();
+            label1 = new Label();
+            panel1 = new Panel();
+            panel1.SuspendLayout();
             SuspendLayout();
+            // 
+            // btnPanel
+            // 
+            btnPanel.BackColor = SystemColors.Control;
+            btnPanel.Location = new Point(-5, 20);
+            btnPanel.Name = "btnPanel";
+            btnPanel.Size = new Size(86, 45);
+            btnPanel.TabIndex = 1;
+            btnPanel.Text = "Menu";
+            btnPanel.UseVisualStyleBackColor = false;
+            btnPanel.Click += btnMenu_Click;
+            // 
+            // btnSearch
+            // 
+            btnSearch.BackColor = SystemColors.Control;
+            btnSearch.Location = new Point(685, 27);
+            btnSearch.Name = "btnSearch";
+            btnSearch.Size = new Size(80, 30);
+            btnSearch.TabIndex = 2;
+            btnSearch.Text = "Search";
+            btnSearch.UseVisualStyleBackColor = false;
+            btnSearch.Click += btnSearch_Click;
+            // 
+            // btnAdd
+            // 
+            btnAdd.BackColor = SystemColors.Control;
+            btnAdd.Location = new Point(680, 607);
+            btnAdd.Name = "btnAdd";
+            btnAdd.Size = new Size(80, 30);
+            btnAdd.TabIndex = 3;
+            btnAdd.Text = "Add";
+            btnAdd.UseVisualStyleBackColor = false;
+            btnAdd.Click += btnAdd_Click;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.BackColor = SystemColors.GradientActiveCaption;
+            label1.BorderStyle = BorderStyle.Fixed3D;
+            label1.Font = new Font("Segoe UI", 15F);
+            label1.Location = new Point(92, 24);
+            label1.Name = "label1";
+            label1.Size = new Size(278, 30);
+            label1.TabIndex = 4;
+            label1.Text = "Feedback  |  Presyong_Ka-Piyu";
+            label1.Click += label1_Click;
+            // 
+            // panel1
+            // 
+            panel1.BackColor = SystemColors.ActiveCaption;
+            panel1.Controls.Add(label1);
+            panel1.Controls.Add(btnSearch);
+            panel1.Location = new Point(-5, 0);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(789, 85);
+            panel1.TabIndex = 5;
             // 
             // Feedback
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
-            AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(984, 661);
-            MaximumSize = new Size(1000, 700);
-            MinimumSize = new Size(1000, 700);
+            BackColor = SystemColors.GradientActiveCaption;
+            ClientSize = new Size(784, 661);
+            Controls.Add(btnAdd);
+            Controls.Add(btnPanel);
+            Controls.Add(panel1);
+            MaximumSize = new Size(800, 700);
+            MinimumSize = new Size(800, 700);
             Name = "Feedback";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Feedback";
+            panel1.ResumeLayout(false);
+            panel1.PerformLayout();
             ResumeLayout(false);
+
+
         }
 
-        #endregion
+
+
+        private System.Windows.Forms.Button btnPanel;
+        private System.Windows.Forms.Button btnSearch;
+        private System.Windows.Forms.Button btnAdd;
+        private Label label1;
+        private Panel panel1;
     }
-}
+
+        #endregion
+   }

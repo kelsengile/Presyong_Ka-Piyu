@@ -1,15 +1,23 @@
+using Microsoft.VisualBasic.ApplicationServices;
 using Presyong_Ka_Piyu.Main.forms;
+using Presyong_Ka_Piyu.Main.forms.Main_Forms;
+using Presyong_Ka_Piyu.Main.programs;
 using System.Data.SQLite;
 
 namespace Presyong_Ka_Piyu
 {
+
+
     public partial class Login : Form
     {
         private readonly string dbPath = @"Data Source=C:\Users\conel\Downloads\Programs\Projects\Presyong_Ka-Piyu\Main\data\Presyong_Ka-Piyu_Database.db";
+        private object? result;
 
         public Login()
         {
+            
             InitializeComponent();
+            
         }
 
         private void btnLogin_Click(object sender, EventArgs e)
@@ -29,7 +37,7 @@ namespace Presyong_Ka_Piyu
                 {
                     conn.Open();
 
-                    string query = "SELECT PasswordHash FROM Users WHERE Username = @Username LIMIT 1";
+                    string query = "SELECT AccountId, PasswordHash FROM Users WHERE Username = @Username LIMIT 1";
                     using (SQLiteCommand cmd = new SQLiteCommand(query, conn))
                     {
                         cmd.Parameters.AddWithValue("@Username", username);
@@ -37,11 +45,17 @@ namespace Presyong_Ka_Piyu
                         {
                             if (reader.Read())
                             {
-                                string storedHash = reader.GetString(0);
+                                int loggedInId = reader.GetInt32(0);
+                                string storedHash = reader.GetString(1);
 
                                 if (BCrypt.Net.BCrypt.Verify(password, storedHash))
                                 {
                                     CustomMessageBox.Show("Log in successful!");
+
+                                    var form = new UserInfo(loggedInId);
+
+                                    Session.LoggedInUserId = loggedInId;
+                                    
 
                                     Map main = new Map();
                                     main.Show();
@@ -118,6 +132,11 @@ namespace Presyong_Ka_Piyu
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        public static class Session
+        {
+            public static int LoggedInUserId;
         }
     }
 }

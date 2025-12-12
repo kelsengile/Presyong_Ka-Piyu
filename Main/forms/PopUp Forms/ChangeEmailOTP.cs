@@ -1,5 +1,4 @@
-﻿using BCrypt.Net;
-using Presyong_Ka_Piyu.Main.programs;
+﻿using Presyong_Ka_Piyu.Main.programs;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -10,24 +9,28 @@ using System.Net;
 using System.Net.Mail;
 using System.Text;
 using System.Windows.Forms;
-using System.Windows.Forms;
 
-namespace Presyong_Ka_Piyu.Main.forms
+namespace Presyong_Ka_Piyu.Main.forms.PopUp_Forms
 {
-    public partial class SendOtp : Form
+    public partial class ChangeEmailOTP : Form
     {
         private string generatedOtp;
+        private int userId;
+        private string newEmail;
         private readonly string dbPath = @"Data Source=C:\Users\conel\Downloads\Programs\Projects\Presyong_Ka-Piyu\Main\data\Presyong_Ka-Piyu_Database.db";
 
-        public SendOtp()
+        public ChangeEmailOTP(int userId, string newEmail)
         {
             InitializeComponent();
             ThemeManager.ApplyTheme(this);
-            SendOTPToEmail();
 
+            this.userId = userId;
+            this.newEmail = newEmail;
+
+            SendOtpToEmail();
         }
 
-        private void SendOTPToEmail()
+        private void SendOtpToEmail()
         {
             generatedOtp = new Random().Next(100000, 999999).ToString();
 
@@ -38,7 +41,7 @@ namespace Presyong_Ka_Piyu.Main.forms
 
                 MailMessage mail = new MailMessage();
                 mail.From = new MailAddress(senderEmail);
-                mail.To.Add(Signup.PendingEmail);
+                mail.To.Add(newEmail);
                 mail.Subject = "Your OTP Code";
                 mail.Body = "Your OTP is: " + generatedOtp;
 
@@ -47,7 +50,7 @@ namespace Presyong_Ka_Piyu.Main.forms
                 smtp.EnableSsl = true;
 
                 smtp.Send(mail);
-                CustomMessageBox.Show("OTP sent!");
+                CustomMessageBox.Show("OTP sent to " + newEmail);
             }
             catch (Exception ex)
             {
@@ -63,52 +66,41 @@ namespace Presyong_Ka_Piyu.Main.forms
                 return;
             }
 
-            // Save new user
+            // Update email in database
             try
             {
                 using (SQLiteConnection conn = new SQLiteConnection(dbPath))
                 {
                     conn.Open();
-
-                    string hashedPassword = BCrypt.Net.BCrypt.HashPassword(Signup.PendingPassword);
-
-                    string query = @"
-                    INSERT INTO Users (Username, PasswordHash, Email)
-                    VALUES (@u, @p, @e)";
-
+                    string query = "UPDATE Users SET Email=@Email WHERE AccountId=@id";
                     using (SQLiteCommand cmd = new SQLiteCommand(query, conn))
                     {
-                        cmd.Parameters.AddWithValue("@u", Signup.PendingUsername);
-                        cmd.Parameters.AddWithValue("@p", hashedPassword);
-                        cmd.Parameters.AddWithValue("@e", Signup.PendingEmail);
+                        cmd.Parameters.AddWithValue("@Email", newEmail);
+                        cmd.Parameters.AddWithValue("@id", userId);
                         cmd.ExecuteNonQuery();
                     }
-
-                    conn.Close();
                 }
 
-                CustomMessageBox.Show("Account created successfully!");
-                Login login = new Login();
-                login.Show();
-                this.Hide();
+                CustomMessageBox.Show("Email updated successfully!");
+                this.Close();
             }
             catch (Exception ex)
             {
-                CustomMessageBox.Show("Error creating account: " + ex.Message);
+                CustomMessageBox.Show("Error updating email: " + ex.Message);
             }
         }
 
         private void btnResend_Click(object sender, EventArgs e)
         {
-            SendOTPToEmail();
+            SendOtpToEmail();
         }
 
-        private void OTPverlabel_Click(object sender, EventArgs e)
+        private void ChangeEmailOTP_Load(object sender, EventArgs e)
         {
 
         }
 
-        private void label2_Click(object sender, EventArgs e)
+        private void OTPverlabel_Click(object sender, EventArgs e)
         {
 
         }
