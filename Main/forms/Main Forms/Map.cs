@@ -8,6 +8,7 @@ using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
+using static Presyong_Ka_Piyu.Login;
 
 namespace Presyong_Ka_Piyu.Main.forms
 {
@@ -41,7 +42,7 @@ namespace Presyong_Ka_Piyu.Main.forms
         private void btnMenu_Click(object sender, EventArgs e)
         {
             menuclose();
-            PopUp_Forms.Menu panel = new PopUp_Forms.Menu();
+            PopUp_Forms.Menu panel = new PopUp_Forms.Menu(Session.LoggedInUserId);
             panel.Show();
         }
 

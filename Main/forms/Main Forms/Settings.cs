@@ -7,6 +7,7 @@ using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
+using static Presyong_Ka_Piyu.Login;
 
 namespace Presyong_Ka_Piyu.Main.forms.Main_Forms
 {
@@ -67,7 +68,7 @@ namespace Presyong_Ka_Piyu.Main.forms.Main_Forms
         private void btnMenu_Click(object sender, EventArgs e)
         {
             menuclose();
-            PopUp_Forms.Menu panel = new PopUp_Forms.Menu();
+            PopUp_Forms.Menu panel = new PopUp_Forms.Menu(Session.LoggedInUserId);
             panel.Show();
         }
 
@@ -128,8 +129,9 @@ namespace Presyong_Ka_Piyu.Main.forms.Main_Forms
         private void btnuserinfo_Click(object sender, EventArgs e)
         {
             UserInfoclose();
-            UserInfo UserInfo = new UserInfo();
-            UserInfo.Show();
+
+            UserInfo userInfoForm = new UserInfo(Session.LoggedInUserId);
+            userInfoForm.Show();
         }
 
 
@@ -159,8 +161,23 @@ namespace Presyong_Ka_Piyu.Main.forms.Main_Forms
 
         }
 
+        private void DataBaseViewerclose()
+        {
+            for (int i = Application.OpenForms.Count - 1; i >= 0; i--)
+            {
+                Form frm = Application.OpenForms[i];
+
+                if (frm is PopUp_Forms.DataBaseViewer
+                    )
+                {
+                    frm.Close();
+                }
+            }
+        }
+
         private void ViewTablesbutton_Click(object sender, EventArgs e)
         {
+            DataBaseViewerclose();
             DataBaseViewer databaseviewer = new DataBaseViewer();
             databaseviewer.Show();
         }

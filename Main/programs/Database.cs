@@ -77,14 +77,24 @@ namespace Presyong_Ka_Piyu.Main.programs
 
             // Users table
             string createUsersTable = @"
-                CREATE TABLE IF NOT EXISTS Users (
-                    Id INTEGER PRIMARY KEY AUTOINCREMENT,
-                    Username TEXT NOT NULL UNIQUE,
-                    PasswordHash TEXT NOT NULL,
-                    FullName TEXT,
-                    Role TEXT DEFAULT 'User',
-                    Email TEXT,
-                    CreatedAt TEXT DEFAULT CURRENT_TIMESTAMP
+            CREATE TABLE IF NOT EXISTS Users (
+                AccountId INTEGER PRIMARY KEY AUTOINCREMENT,
+                Username TEXT NOT NULL UNIQUE,
+                PasswordHash TEXT NOT NULL,
+                FullName TEXT,
+                Role TEXT DEFAULT 'User',
+                Email TEXT,
+                SchoolID TEXT UNIQUE,
+                Bio TEXT,
+                Course TEXT,
+                Department TEXT,
+                ContactNumber TEXT,
+                ContactFacebook TEXT,
+                ContactInsta TEXT,             
+                DateOfBirth TEXT,
+                Address TEXT,
+                ProfilePicture TEXT,
+                CreatedAt TEXT DEFAULT CURRENT_TIMESTAMP
                 );
             ";
 

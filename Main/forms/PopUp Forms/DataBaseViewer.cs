@@ -47,7 +47,7 @@ namespace Presyong_Ka_Piyu.Main.forms.PopUp_Forms
         {
             if (comboTables.SelectedIndex == -1)
             {
-                MessageBox.Show("Please select a table.");
+                CustomMessageBox.Show("Please select a table.");
                 return;
             }
 

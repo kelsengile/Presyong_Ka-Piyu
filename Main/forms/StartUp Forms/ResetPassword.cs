@@ -1,16 +1,19 @@
-﻿using System;
+﻿using BCrypt.Net;
+using Presyong_Ka_Piyu.Main.forms.Main_Forms;
+using Presyong_Ka_Piyu.Main.forms.PopUp_Forms;
+using Presyong_Ka_Piyu.Main.programs;
+using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Text;
-using System.Windows.Forms;
-using System;
 using System.Data.SQLite;
+using System.Drawing;
 using System.Net;
 using System.Net.Mail;
+using System.Text;
 using System.Windows.Forms;
-using BCrypt.Net;
+using System.Windows.Forms;
 
 namespace Presyong_Ka_Piyu.Main.forms
 {
@@ -22,7 +25,7 @@ namespace Presyong_Ka_Piyu.Main.forms
         public ResetPassword()
         {
             InitializeComponent();
-
+            ThemeManager.ApplyTheme(this);
 
         }
 
@@ -175,6 +178,9 @@ namespace Presyong_Ka_Piyu.Main.forms
 
         private void btnBack_Click(object sender, EventArgs e)
         {
+
+            
+
             Login login = new Login();
             login.Show();
             this.Hide();
@@ -204,5 +210,7 @@ namespace Presyong_Ka_Piyu.Main.forms
         {
 
         }
+
+        
     }
 }

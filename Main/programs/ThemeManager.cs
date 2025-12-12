@@ -25,6 +25,9 @@ namespace Presyong_Ka_Piyu.Main.programs
         public static Color LabelBackColor { get; set; } = SystemColors.GradientActiveCaption;
         public static Color LabelForeColor { get; set; } = Color.Black;
 
+        public static Color TextBoxBackColor { get; set; } = SystemColors.Control;
+        public static Color TextBoxForeColor { get; set; } = Color.Black;
+
         // Apply theme to any form
         public static void ApplyTheme(Form form)
         {
@@ -79,6 +82,11 @@ namespace Presyong_Ka_Piyu.Main.programs
                     {
                         c.BackColor = LabelBackColor;
                         c.ForeColor = LabelForeColor;
+                    }
+                    else if (c is TextBox)
+                    {
+                        c.BackColor = TextBoxBackColor;
+                        c.ForeColor = TextBoxForeColor;
                     }
                     else
                     {
