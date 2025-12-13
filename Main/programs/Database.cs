@@ -30,47 +30,55 @@ namespace Presyong_Ka_Piyu.Main.programs
         private static void CreateTables(SQLiteConnection conn)
         {
 
-            string createItemsTable = @"
-                CREATE TABLE IF NOT EXISTS Items (
-                    Id INTEGER PRIMARY KEY AUTOINCREMENT,
-                    Name TEXT NOT NULL,
-                    CategoryId INTEGER,
-                    Description TEXT,
-                    ImagePath TEXT,
-                    CreatedAt TEXT DEFAULT CURRENT_TIMESTAMP,
-                    FOREIGN KEY (CategoryId) REFERENCES Categories(Id)
-                );
-            ";
+            string createProductsTable = @"
+    CREATE TABLE IF NOT EXISTS Products (
+        Id INTEGER PRIMARY KEY AUTOINCREMENT,
+        Name TEXT NOT NULL,
+        CategoryId INTEGER NOT NULL,
+        Description TEXT,
+        ImagePath TEXT,
+        Rating REAL DEFAULT 0,
+        IsFavorite INTEGER DEFAULT 0,
+        CreatedAt TEXT DEFAULT CURRENT_TIMESTAMP,
+        FOREIGN KEY (CategoryId) REFERENCES Categories(Id)
+    );
+";
 
             // Categories table
             string createCategoriesTable = @"
                 CREATE TABLE IF NOT EXISTS Categories (
                     Id INTEGER PRIMARY KEY AUTOINCREMENT,
                     CategoryName TEXT NOT NULL,
+                    CategoryType TEXT NOT NULL CHECK (CategoryType IN ('Product', 'Store')),
                     Description TEXT
                 );
             ";
 
             // Stores table
             string createStoresTable = @"
-                CREATE TABLE IF NOT EXISTS Stores (
-                    Id INTEGER PRIMARY KEY AUTOINCREMENT,
-                    StoreName TEXT NOT NULL,
-                    Location TEXT,
-                    ContactNumber TEXT,
-                    CreatedAt TEXT DEFAULT CURRENT_TIMESTAMP
-                );
-            ";
-
+    CREATE TABLE IF NOT EXISTS Stores (
+        Id INTEGER PRIMARY KEY AUTOINCREMENT,
+        Name TEXT NOT NULL,
+        Location TEXT NOT NULL,
+        Contact TEXT,
+        ImagePath TEXT,
+        Description TEXT,
+        Rating REAL DEFAULT 0,
+        IsFavorite INTEGER DEFAULT 0,
+        CategoryId INTEGER NOT NULL,
+        CreatedAt TEXT DEFAULT CURRENT_TIMESTAMP,
+        FOREIGN KEY (CategoryId) REFERENCES Categories(Id)
+    );
+";
             // Prices table
             string createPricesTable = @"
                 CREATE TABLE IF NOT EXISTS Prices (
                     Id INTEGER PRIMARY KEY AUTOINCREMENT,
-                    ItemId INTEGER NOT NULL,
+                    ProductId INTEGER NOT NULL,
                     StoreId INTEGER NOT NULL,
                     Price REAL NOT NULL,
-                    LastUpdated TEXT DEFAULT CURRENT_TIMESTAMP,
-                    FOREIGN KEY (ItemId) REFERENCES Items(Id),
+                    CreatedAt TEXT DEFAULT CURRENT_TIMESTAMP,
+                    FOREIGN KEY (ProductId) REFERENCES Products(Id),
                     FOREIGN KEY (StoreId) REFERENCES Stores(Id)
                 );
             ";
@@ -100,7 +108,7 @@ namespace Presyong_Ka_Piyu.Main.programs
 
             // Execute all
             ExecuteNonQuery(conn, createCategoriesTable);
-            ExecuteNonQuery(conn, createItemsTable);
+            ExecuteNonQuery(conn, createProductsTable);
             ExecuteNonQuery(conn, createStoresTable);
             ExecuteNonQuery(conn, createPricesTable);
             ExecuteNonQuery(conn, createUsersTable);
