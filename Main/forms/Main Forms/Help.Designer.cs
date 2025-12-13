@@ -96,8 +96,8 @@
             // 
             BackColor = SystemColors.GradientActiveCaption;
             ClientSize = new Size(784, 661);
+            Controls.Add(panel2);
             Controls.Add(btnAdd);
-            Controls.Add(btnPanel);
             Controls.Add(panel1);
             MaximumSize = new Size(800, 700);
             MinimumSize = new Size(800, 700);
@@ -107,11 +107,7 @@
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ResumeLayout(false);
-
-
         }
-
-
 
         private System.Windows.Forms.Button btnPanel;
         private System.Windows.Forms.Button btnSearch;
