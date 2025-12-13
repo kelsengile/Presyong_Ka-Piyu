@@ -44,7 +44,7 @@
             // btnOK
             // 
             btnOK.BackColor = SystemColors.Control;
-            btnOK.Location = new Point(95, 80);
+            btnOK.Location = new Point(101, 83);
             btnOK.Name = "btnOK";
             btnOK.Size = new Size(80, 25);
             btnOK.TabIndex = 1;

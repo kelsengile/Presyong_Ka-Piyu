@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
@@ -89,6 +90,77 @@ namespace Presyong_Ka_Piyu.Main.forms.Main_Forms
         private void label1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void Question1_Button(object sender, EventArgs e)
+        {
+            CustomMessageBox.Show("Kasi Masakit");
+        }
+
+        private void Question2_Button(object sender, EventArgs e)
+        {
+            CustomMessageBox.Show("Kasi");
+        }
+
+        private void Question3_Button(object sender, EventArgs e)
+        {
+            CustomMessageBox.Show("Napakaangas");
+        }
+
+        private void Question4_Button(object sender, EventArgs e)
+        {
+            CustomMessageBox.Show("Napakaangas");
+        }
+
+        private void Question5_Button(object sender, EventArgs e)
+        {
+            CustomMessageBox.Show("Napakaangas");
+        }
+
+        private void Question6_Button(object sender, EventArgs e)
+        {
+            CustomMessageBox.Show("Napakaangas");
+        }
+
+        private void Question7_Button(object sender, EventArgs e)
+        {
+            CustomMessageBox.Show("Napakaangas");
+        }
+
+        private void Question8_Button(object sender, EventArgs e)
+        {
+            CustomMessageBox.Show("Napakaangas");
+        }
+
+        private void Question9_Button(object sender, EventArgs e)
+        {
+            CustomMessageBox.Show("Napakaangas");
+        }
+
+        private void Question10_Button(object sender, EventArgs e)
+        {
+            CustomMessageBox.Show("Napakaangas");
+        }
+
+        private void AskSpecificQuestions_Button(object sender, EventArgs e)
+        {
+            try
+            {
+                Process.Start(new ProcessStartInfo
+                {
+                    FileName = "mailto:presyongkapiyu@gmail.com",
+                    UseShellExecute = true
+                });
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Unable to open email client: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }

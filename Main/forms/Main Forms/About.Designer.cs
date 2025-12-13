@@ -28,11 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(About));
             btnPanel = new Button();
             btnSearch = new Button();
             btnAdd = new Button();
             label1 = new Label();
             panel1 = new Panel();
+            btnFacebook = new Button();
+            btnInstagram = new Button();
+            btnEmail = new Button();
+            textBox_Description = new TextBox();
             panel1.SuspendLayout();
             SuspendLayout();
             // 
@@ -92,10 +97,59 @@
             panel1.Size = new Size(789, 85);
             panel1.TabIndex = 5;
             // 
+            // btnFacebook
+            // 
+            btnFacebook.Location = new Point(22, 611);
+            btnFacebook.Name = "btnFacebook";
+            btnFacebook.Size = new Size(75, 23);
+            btnFacebook.TabIndex = 6;
+            btnFacebook.Text = "Facebook";
+            btnFacebook.UseVisualStyleBackColor = true;
+            btnFacebook.Click += btnFacebook_Click;
+            // 
+            // btnInstagram
+            // 
+            btnInstagram.Location = new Point(157, 611);
+            btnInstagram.Name = "btnInstagram";
+            btnInstagram.Size = new Size(75, 23);
+            btnInstagram.TabIndex = 7;
+            btnInstagram.Text = "Instagram";
+            btnInstagram.UseVisualStyleBackColor = true;
+            btnInstagram.Click += btnInstagram_Click;
+            // 
+            // btnEmail
+            // 
+            btnEmail.Location = new Point(294, 611);
+            btnEmail.Name = "btnEmail";
+            btnEmail.Size = new Size(75, 23);
+            btnEmail.TabIndex = 8;
+            btnEmail.Text = "Email";
+            btnEmail.UseVisualStyleBackColor = true;
+            btnEmail.Click += btnEmail_Click;
+            // 
+            // textBox_Description
+            // 
+            textBox_Description.BackColor = SystemColors.ActiveCaption;
+            textBox_Description.ForeColor = SystemColors.MenuText;
+            textBox_Description.Location = new Point(22, 104);
+            textBox_Description.Multiline = true;
+            textBox_Description.Name = "textBox_Description";
+            textBox_Description.ReadOnly = true;
+            textBox_Description.ScrollBars = ScrollBars.Vertical;
+            textBox_Description.Size = new Size(738, 485);
+            textBox_Description.TabIndex = 9;
+            textBox_Description.Text = resources.GetString("textBox_Description.Text");
+            textBox_Description.TextAlign = HorizontalAlignment.Center;
+            textBox_Description.TextChanged += txtDescription;
+            // 
             // About
             // 
             BackColor = SystemColors.GradientActiveCaption;
             ClientSize = new Size(784, 661);
+            Controls.Add(textBox_Description);
+            Controls.Add(btnEmail);
+            Controls.Add(btnInstagram);
+            Controls.Add(btnFacebook);
             Controls.Add(btnAdd);
             Controls.Add(btnPanel);
             Controls.Add(panel1);
@@ -107,6 +161,7 @@
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ResumeLayout(false);
+            PerformLayout();
 
 
         }
@@ -121,5 +176,10 @@
 
 
         #endregion
+
+        private Button btnFacebook;
+        private Button btnInstagram;
+        private Button btnEmail;
+        private TextBox textBox_Description;
     }
 }
