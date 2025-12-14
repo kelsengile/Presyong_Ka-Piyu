@@ -2,6 +2,9 @@
 {
     partial class ProductInfo
     {
+        
+
+
         /// <summary>
         /// Required designer variable.
         /// </summary>
@@ -28,19 +31,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            SuspendLayout();
-            // 
-            // ProductInfo
-            // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
-            AutoScaleMode = AutoScaleMode.Font;
-            BackColor = SystemColors.GradientActiveCaption;
-            ClientSize = new Size(800, 450);
-            Name = "ProductInfo";
-            Text = "ProductInfo";
-            ResumeLayout(false);
+            
         }
-
-        #endregion
     }
 }
+        
+
+        #endregion
+    

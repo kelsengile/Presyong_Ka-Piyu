@@ -25,11 +25,22 @@ namespace Presyong_Ka_Piyu.Main.programs
             conn.Open();
 
             CreateTables(conn);
+            SeedDefaultLocations(conn);
         }
 
         private static void CreateTables(SQLiteConnection conn)
         {
+            // Locations Tables
+            string createLocationsTable = @"
+    CREATE TABLE IF NOT EXISTS Locations (
+        Id INTEGER PRIMARY KEY AUTOINCREMENT,
+        LocationName TEXT NOT NULL UNIQUE,
+        CreatedAt TEXT DEFAULT CURRENT_TIMESTAMP
+    );
+";
 
+
+            // Products table
             string createProductsTable = @"
     CREATE TABLE IF NOT EXISTS Products (
         Id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -59,15 +70,16 @@ namespace Presyong_Ka_Piyu.Main.programs
     CREATE TABLE IF NOT EXISTS Stores (
         Id INTEGER PRIMARY KEY AUTOINCREMENT,
         Name TEXT NOT NULL,
-        Location TEXT NOT NULL,
+        LocationId INTEGER NOT NULL,
         Contact TEXT,
         ImagePath TEXT,
         Description TEXT,
         Rating REAL DEFAULT 0,
-        IsFavorite INTEGER DEFAULT 0,
         CategoryId INTEGER NOT NULL,
+        IsFavorite INTEGER DEFAULT 0,
         CreatedAt TEXT DEFAULT CURRENT_TIMESTAMP,
-        FOREIGN KEY (CategoryId) REFERENCES Categories(Id)
+        FOREIGN KEY (CategoryId) REFERENCES Categories(Id),
+        FOREIGN KEY (LocationId) REFERENCES StoreLocations(Id)
     );
 ";
             // Prices table
@@ -112,8 +124,24 @@ namespace Presyong_Ka_Piyu.Main.programs
             ExecuteNonQuery(conn, createStoresTable);
             ExecuteNonQuery(conn, createPricesTable);
             ExecuteNonQuery(conn, createUsersTable);
+            ExecuteNonQuery(conn, createLocationsTable);
 
         }
+
+        private static void SeedDefaultLocations(SQLiteConnection conn)
+        {
+            string[] defaultLocations = { "Cafeteria 1", "Cafeteria 2", "CCS", "CAS" };
+
+            foreach (var location in defaultLocations)
+            {
+                using var cmd = new SQLiteCommand(@"
+                    INSERT OR IGNORE INTO Locations (LocationName) 
+                    VALUES (@LocationName);", conn);
+                cmd.Parameters.AddWithValue("@LocationName", location);
+                cmd.ExecuteNonQuery();
+            }
+        }
+
 
         private static void ExecuteNonQuery(SQLiteConnection conn, string sql)
         {

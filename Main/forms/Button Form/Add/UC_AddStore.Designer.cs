@@ -49,9 +49,6 @@
             ((System.ComponentModel.ISupportInitialize)numRating).BeginInit();
             ((System.ComponentModel.ISupportInitialize)picImage).BeginInit();
             SuspendLayout();
-
-            this.StartPosition = FormStartPosition.Manual;
-
             // 
             // txtName
             // 
@@ -113,12 +110,14 @@
             // 
             // btnBrowse
             // 
+            btnBrowse.BackColor = SystemColors.Control;
             btnBrowse.Font = new Font("Segoe UI", 7F);
             btnBrowse.Location = new Point(24, 231);
             btnBrowse.Name = "btnBrowse";
             btnBrowse.Size = new Size(111, 22);
             btnBrowse.TabIndex = 8;
             btnBrowse.Text = "Browse Image";
+            btnBrowse.UseVisualStyleBackColor = false;
             btnBrowse.Click += btnBrowse_Click;
             // 
             // chkFavorite
@@ -132,20 +131,24 @@
             // 
             // btnSave
             // 
+            btnSave.BackColor = SystemColors.Control;
             btnSave.Location = new Point(375, 459);
             btnSave.Name = "btnSave";
             btnSave.Size = new Size(75, 30);
             btnSave.TabIndex = 9;
             btnSave.Text = "Save";
+            btnSave.UseVisualStyleBackColor = false;
             btnSave.Click += btnSave_Click;
             // 
             // btnCancel
             // 
+            btnCancel.BackColor = SystemColors.Control;
             btnCancel.Location = new Point(294, 459);
             btnCancel.Name = "btnCancel";
             btnCancel.Size = new Size(75, 30);
             btnCancel.TabIndex = 10;
             btnCancel.Text = "Cancel";
+            btnCancel.UseVisualStyleBackColor = false;
             btnCancel.Click += btnCancel_Click;
             // 
             // label_addshop
@@ -212,8 +215,9 @@
             label6.TabIndex = 17;
             label6.Text = "Description:";
             // 
-            // UC_AddShop
+            // UC_AddStore
             // 
+            BackColor = SystemColors.GradientActiveCaption;
             Controls.Add(label6);
             Controls.Add(label5);
             Controls.Add(label4);
@@ -232,7 +236,7 @@
             Controls.Add(btnBrowse);
             Controls.Add(btnSave);
             Controls.Add(btnCancel);
-            Name = "UC_AddShop";
+            Name = "UC_AddStore";
             Size = new Size(464, 502);
             ((System.ComponentModel.ISupportInitialize)numRating).EndInit();
             ((System.ComponentModel.ISupportInitialize)picImage).EndInit();

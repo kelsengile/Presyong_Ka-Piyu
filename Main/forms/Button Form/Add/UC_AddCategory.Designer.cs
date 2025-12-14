@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-
             txtCategoryName = new TextBox();
             cmbCategoryType = new ComboBox();
             txtDescription = new TextBox();
@@ -39,9 +38,6 @@
             label3 = new Label();
             label4 = new Label();
             SuspendLayout();
-
-            this.StartPosition = FormStartPosition.Manual;
-
             // 
             // txtCategoryName
             // 
@@ -68,20 +64,24 @@
             // 
             // btnSave
             // 
+            btnSave.BackColor = SystemColors.Control;
             btnSave.Location = new Point(362, 454);
             btnSave.Name = "btnSave";
             btnSave.Size = new Size(75, 30);
             btnSave.TabIndex = 3;
             btnSave.Text = "Save";
+            btnSave.UseVisualStyleBackColor = false;
             btnSave.Click += btnSave_Click;
             // 
             // btnCancel
             // 
+            btnCancel.BackColor = SystemColors.Control;
             btnCancel.Location = new Point(272, 454);
             btnCancel.Name = "btnCancel";
             btnCancel.Size = new Size(75, 30);
             btnCancel.TabIndex = 4;
             btnCancel.Text = "Cancel";
+            btnCancel.UseVisualStyleBackColor = false;
             btnCancel.Click += btnCancel_Click;
             // 
             // label1
@@ -123,6 +123,7 @@
             // 
             // UC_AddCategory
             // 
+            BackColor = SystemColors.GradientActiveCaption;
             Controls.Add(label4);
             Controls.Add(label3);
             Controls.Add(label2);

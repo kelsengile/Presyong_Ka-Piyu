@@ -2,6 +2,10 @@
 {
     partial class Search
     {
+
+        private TextBox txtSearch;
+        private FlowLayoutPanel flpResults;
+
         /// <summary>
         /// Required designer variable.
         /// </summary>
@@ -28,22 +32,56 @@
         /// </summary>
         private void InitializeComponent()
         {
+            txtSearch = new TextBox();
+            flpResults = new FlowLayoutPanel();
+            label1 = new Label();
             SuspendLayout();
+            // 
+            // txtSearch
+            // 
+            txtSearch.Location = new Point(71, 22);
+            txtSearch.Name = "txtSearch";
+            txtSearch.Size = new Size(220, 23);
+            txtSearch.TabIndex = 0;
+            txtSearch.TextChanged += txtSearch_TextChanged;
+            // 
+            // flpResults
+            // 
+            flpResults.AutoScroll = true;
+            flpResults.FlowDirection = FlowDirection.TopDown;
+            flpResults.Location = new Point(20, 60);
+            flpResults.Name = "flpResults";
+            flpResults.Size = new Size(271, 416);
+            flpResults.TabIndex = 1;
+            flpResults.WrapContents = false;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(20, 25);
+            label1.Name = "label1";
+            label1.Size = new Size(45, 15);
+            label1.TabIndex = 2;
+            label1.Text = "Search:";
             // 
             // Search
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
-            AutoScaleMode = AutoScaleMode.Font;
-            BackColor = SystemColors.GradientActiveCaption;
-            ClientSize = new Size(354, 451);
-            MaximumSize = new Size(370, 490);
-            MinimumSize = new Size(370, 490);
+            ClientSize = new Size(308, 498);
+            Controls.Add(label1);
+            Controls.Add(txtSearch);
+            Controls.Add(flpResults);
+            MaximumSize = new Size(324, 537);
+            MinimumSize = new Size(324, 537);
             Name = "Search";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Search";
+            Load += Search_Load;
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
+
+        private Label label1;
     }
 }
