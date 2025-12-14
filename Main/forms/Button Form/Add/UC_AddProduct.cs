@@ -19,7 +19,7 @@ namespace Presyong_Ka_Piyu.Main.forms.Button_Form
         public UC_AddProduct()
         {
             InitializeComponent();
-            
+
 
             LoadCategories();
             LoadStores();
@@ -31,7 +31,8 @@ namespace Presyong_Ka_Piyu.Main.forms.Button_Form
             conn.Open();
 
             using var cmd = new SQLiteCommand(
-                "SELECT Id, CategoryName FROM Categories WHERE CategoryType='Product'", conn);
+                "SELECT Id, CategoryName FROM Categories WHERE CategoryType = 'Product' ORDER BY CategoryName;",
+                conn);
 
             DataTable dt = new DataTable();
             dt.Load(cmd.ExecuteReader());
@@ -39,6 +40,7 @@ namespace Presyong_Ka_Piyu.Main.forms.Button_Form
             cmbCategory.DataSource = dt;
             cmbCategory.DisplayMember = "CategoryName";
             cmbCategory.ValueMember = "Id";
+            cmbCategory.SelectedIndex = -1; // No default selection
         }
 
         private void LoadStores()
@@ -54,6 +56,7 @@ namespace Presyong_Ka_Piyu.Main.forms.Button_Form
             cmbStore.DataSource = dt;
             cmbStore.DisplayMember = "Name";
             cmbStore.ValueMember = "Id";
+            cmbStore.SelectedIndex = -1; // No default selection
         }
 
         private void btnBrowse_Click(object sender, EventArgs e)
@@ -88,11 +91,12 @@ namespace Presyong_Ka_Piyu.Main.forms.Button_Form
             {
                 long productId;
 
+                // 1️⃣ Insert product
                 using (var cmd = new SQLiteCommand(@"
-                    INSERT INTO Products
-(Name, CategoryId, Description, ImagePath, Rating, IsFavorite)
-                    VALUES
-(@Name, @CategoryId, @Description, @ImagePath, @Rating, @IsFavorite);", conn))
+            INSERT INTO Products
+            (Name, CategoryId, Description, ImagePath, Rating, IsFavorite)
+            VALUES
+            (@Name, @CategoryId, @Description, @ImagePath, @Rating, @IsFavorite);", conn, tx))
                 {
                     cmd.Parameters.AddWithValue("@Name", txtName.Text);
                     cmd.Parameters.AddWithValue("@CategoryId", cmbCategory.SelectedValue);
@@ -101,23 +105,32 @@ namespace Presyong_Ka_Piyu.Main.forms.Button_Form
                     cmd.Parameters.AddWithValue("@Rating", numRating.Value);
                     cmd.Parameters.AddWithValue("@IsFavorite", chkFavorite.Checked ? 1 : 0);
 
+                    cmd.ExecuteNonQuery();
+                }
+
+                // 2️⃣ Get last inserted Product ID
+                using (var cmd = new SQLiteCommand(
+                    "SELECT last_insert_rowid();", conn, tx))
+                {
                     productId = (long)cmd.ExecuteScalar();
                 }
 
+                // 3️⃣ Insert price record
                 using (var cmd = new SQLiteCommand(@"
-                    INSERT INTO Prices (ProductId, StoreId, Price)
-                    VALUES (@ProductId, @StoreId, @Price);", conn))
+            INSERT INTO Prices (ProductId, StoreId, Price)
+            VALUES (@ProductId, @StoreId, @Price);", conn, tx))
                 {
                     cmd.Parameters.AddWithValue("@ProductId", productId);
                     cmd.Parameters.AddWithValue("@StoreId", cmbStore.SelectedValue);
                     cmd.Parameters.AddWithValue("@Price", numPrice.Value);
+
                     cmd.ExecuteNonQuery();
                 }
 
                 tx.Commit();
                 CustomMessageBox.Show("Product saved successfully.");
-                Add add = new Add();
-                add.Close();
+                var addForm = this.FindForm() as Add;
+                addForm?.RestartAddForm();
             }
             catch (Exception ex)
             {
@@ -128,8 +141,8 @@ namespace Presyong_Ka_Piyu.Main.forms.Button_Form
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
-            Add add = new Add();
-            add.Close();
+            var addForm = this.FindForm() as Add;
+            addForm?.RestartAddForm();
         }
 
         private void numPrice_ValueChanged(object sender, EventArgs e)
@@ -138,6 +151,11 @@ namespace Presyong_Ka_Piyu.Main.forms.Button_Form
         }
 
         private void UC_AddProduct_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
         {
 
         }

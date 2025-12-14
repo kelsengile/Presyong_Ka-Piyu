@@ -14,7 +14,7 @@ namespace Presyong_Ka_Piyu.Main.forms
     {
 
         UC_AddProduct ucProduct;
-        UC_AddShop ucShop;
+        UC_AddStore ucShop;
         UC_AddCategory ucCategory;
 
 
@@ -29,13 +29,28 @@ namespace Presyong_Ka_Piyu.Main.forms
             btnAddShop.Click += btn_AddShop_Click;
             btnAddCategory.Click += btn_AddCategory_Click;
 
+            ucProduct.Show();
+            ucProduct.BringToFront();
+
+        }
+
+        public void RestartAddForm()
+        {
+            Point currentLocation = this.Location;
+
+            Add newAddForm = new Add();
+            newAddForm.StartPosition = FormStartPosition.Manual;
+            newAddForm.Location = currentLocation;
+
+            newAddForm.Show();
+            this.Close();
         }
 
 
         private void LoadUserControls()
         {
             ucProduct = new UC_AddProduct();
-            ucShop = new UC_AddShop();
+            ucShop = new UC_AddStore();
             ucCategory = new UC_AddCategory();
 
             panelContent.Controls.Add(ucProduct);

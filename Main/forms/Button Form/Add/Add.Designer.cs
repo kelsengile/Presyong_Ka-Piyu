@@ -48,21 +48,21 @@
             // 
             // panelMenu
             // 
+            panelMenu.Controls.Add(btnAddShop);
             panelMenu.Controls.Add(button2);
             panelMenu.Controls.Add(Addlabel);
             panelMenu.Controls.Add(btnAddCategory);
-            panelMenu.Controls.Add(btnAddShop);
             panelMenu.Controls.Add(btnAddProduct);
             panelMenu.Controls.Add(flowLayoutPanel1);
             panelMenu.Dock = DockStyle.Top;
             panelMenu.Location = new Point(0, 0);
             panelMenu.Name = "panelMenu";
-            panelMenu.Size = new Size(464, 163);
+            panelMenu.Size = new Size(464, 121);
             panelMenu.TabIndex = 1;
             // 
             // button2
             // 
-            button2.Location = new Point(3, 128);
+            button2.Location = new Point(0, 98);
             button2.Name = "button2";
             button2.Size = new Size(458, 12);
             button2.TabIndex = 0;
@@ -73,7 +73,7 @@
             Addlabel.AutoSize = true;
             Addlabel.BorderStyle = BorderStyle.Fixed3D;
             Addlabel.Font = new Font("Segoe UI", 15F);
-            Addlabel.Location = new Point(204, 18);
+            Addlabel.Location = new Point(206, 9);
             Addlabel.Name = "Addlabel";
             Addlabel.Size = new Size(51, 30);
             Addlabel.TabIndex = 3;
@@ -82,49 +82,49 @@
             // btnAddCategory
             // 
             btnAddCategory.BackColor = SystemColors.Control;
-            btnAddCategory.Location = new Point(308, 59);
+            btnAddCategory.Location = new Point(305, 42);
             btnAddCategory.Name = "btnAddCategory";
-            btnAddCategory.Size = new Size(129, 50);
+            btnAddCategory.Size = new Size(130, 50);
             btnAddCategory.TabIndex = 0;
-            btnAddCategory.Text = "Add Category";
+            btnAddCategory.Text = "Category";
             btnAddCategory.UseVisualStyleBackColor = false;
             // 
             // btnAddShop
             // 
             btnAddShop.BackColor = SystemColors.Control;
-            btnAddShop.Location = new Point(156, 59);
+            btnAddShop.Location = new Point(169, 42);
             btnAddShop.Name = "btnAddShop";
-            btnAddShop.Size = new Size(146, 50);
+            btnAddShop.Size = new Size(130, 50);
             btnAddShop.TabIndex = 1;
-            btnAddShop.Text = "Add Shop";
+            btnAddShop.Text = "Shop";
             btnAddShop.UseVisualStyleBackColor = false;
             // 
             // btnAddProduct
             // 
             btnAddProduct.BackColor = SystemColors.Control;
-            btnAddProduct.Location = new Point(21, 59);
+            btnAddProduct.Location = new Point(33, 42);
             btnAddProduct.Name = "btnAddProduct";
-            btnAddProduct.Size = new Size(129, 50);
+            btnAddProduct.Size = new Size(130, 50);
             btnAddProduct.TabIndex = 2;
-            btnAddProduct.Text = "Add Product";
+            btnAddProduct.Text = "Product";
             btnAddProduct.UseVisualStyleBackColor = false;
             btnAddProduct.Click += btnAddProduct_Click;
             // 
             // flowLayoutPanel1
             // 
             flowLayoutPanel1.BackColor = SystemColors.ActiveCaption;
-            flowLayoutPanel1.Location = new Point(0, 3);
+            flowLayoutPanel1.Location = new Point(0, 1);
             flowLayoutPanel1.Name = "flowLayoutPanel1";
-            flowLayoutPanel1.Size = new Size(464, 151);
+            flowLayoutPanel1.Size = new Size(464, 256);
             flowLayoutPanel1.TabIndex = 4;
             flowLayoutPanel1.Paint += flowLayoutPanel1_Paint;
             // 
             // panelContent
             // 
             panelContent.Dock = DockStyle.Fill;
-            panelContent.Location = new Point(0, 163);
+            panelContent.Location = new Point(0, 121);
             panelContent.Name = "panelContent";
-            panelContent.Size = new Size(464, 460);
+            panelContent.Size = new Size(464, 502);
             panelContent.TabIndex = 0;
             panelContent.Paint += panelContent_Paint;
             // 
@@ -136,6 +136,8 @@
             ClientSize = new Size(464, 623);
             Controls.Add(panelContent);
             Controls.Add(panelMenu);
+            MaximumSize = new Size(480, 662);
+            MinimumSize = new Size(480, 662);
             Name = "Add";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Add";
