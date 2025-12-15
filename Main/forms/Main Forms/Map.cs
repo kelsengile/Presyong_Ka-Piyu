@@ -107,5 +107,10 @@ namespace Presyong_Ka_Piyu.Main.forms
         {
 
         }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

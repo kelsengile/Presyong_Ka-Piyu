@@ -35,10 +35,10 @@
         private void InitializeComponent()
         {
             panelMenu = new Panel();
+            btnAddShop = new Button();
             button2 = new Button();
             Addlabel = new Label();
             btnAddCategory = new Button();
-            btnAddShop = new Button();
             btnAddProduct = new Button();
             flowLayoutPanel1 = new FlowLayoutPanel();
             panelContent = new Panel();
@@ -59,6 +59,16 @@
             panelMenu.Name = "panelMenu";
             panelMenu.Size = new Size(464, 121);
             panelMenu.TabIndex = 1;
+            // 
+            // btnAddShop
+            // 
+            btnAddShop.BackColor = SystemColors.Control;
+            btnAddShop.Location = new Point(169, 42);
+            btnAddShop.Name = "btnAddShop";
+            btnAddShop.Size = new Size(130, 50);
+            btnAddShop.TabIndex = 1;
+            btnAddShop.Text = "Shop";
+            btnAddShop.UseVisualStyleBackColor = false;
             // 
             // button2
             // 
@@ -88,16 +98,6 @@
             btnAddCategory.TabIndex = 0;
             btnAddCategory.Text = "Category";
             btnAddCategory.UseVisualStyleBackColor = false;
-            // 
-            // btnAddShop
-            // 
-            btnAddShop.BackColor = SystemColors.Control;
-            btnAddShop.Location = new Point(169, 42);
-            btnAddShop.Name = "btnAddShop";
-            btnAddShop.Size = new Size(130, 50);
-            btnAddShop.TabIndex = 1;
-            btnAddShop.Text = "Shop";
-            btnAddShop.UseVisualStyleBackColor = false;
             // 
             // btnAddProduct
             // 
@@ -149,12 +149,11 @@
         #endregion
 
 
-        private Label label_add;
-  
+
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private Label Addlabel;
         private FlowLayoutPanel flowLayoutPanel1;
-        private Button button1;
+       
         private Button button2;
     }
 }

@@ -28,26 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            mapBox = new PictureBox();
             btnPanel = new Button();
             btnSearch = new Button();
             btnAdd = new Button();
             label1 = new Label();
             panel1 = new Panel();
-            ((System.ComponentModel.ISupportInitialize)mapBox).BeginInit();
             panel1.SuspendLayout();
             SuspendLayout();
-            // 
-            // mapBox
-            // 
-            mapBox.Image = Properties.Resources.MapImagePrototype;
-            mapBox.Location = new Point(-5, 81);
-            mapBox.Name = "mapBox";
-            mapBox.Size = new Size(799, 583);
-            mapBox.SizeMode = PictureBoxSizeMode.Zoom;
-            mapBox.TabIndex = 0;
-            mapBox.TabStop = false;
-            mapBox.Click += mapBox_Click;
             // 
             // btnPanel
             // 
@@ -112,20 +99,16 @@
             Controls.Add(btnAdd);
             Controls.Add(btnPanel);
             Controls.Add(panel1);
-            Controls.Add(mapBox);
             MaximumSize = new Size(800, 700);
             MinimumSize = new Size(800, 700);
             Name = "Map";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Campus Map";
             Load += Map_Load;
-            ((System.ComponentModel.ISupportInitialize)mapBox).EndInit();
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ResumeLayout(false);
         }
-
-        private System.Windows.Forms.PictureBox mapBox;
         private System.Windows.Forms.Button btnPanel;
         private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.Button btnAdd;

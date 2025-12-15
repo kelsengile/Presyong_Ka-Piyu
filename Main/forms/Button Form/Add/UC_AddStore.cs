@@ -94,7 +94,7 @@ namespace Presyong_Ka_Piyu.Main.forms.Button_Form
                     (@Name, @LocationID, @Contact, @ImagePath, @Description, @Rating, @CategoryId, @IsFavorite);", conn);
 
                 cmd.Parameters.AddWithValue("@Name", txtName.Text);
-                cmd.Parameters.AddWithValue("@LocationID", cmbLocation.SelectedItem.ToString());
+                cmd.Parameters.AddWithValue("@LocationID", cmbLocation.SelectedValue);
                 cmd.Parameters.AddWithValue("@Contact", txtContact.Text);
                 cmd.Parameters.AddWithValue("@ImagePath", imagePath);
                 cmd.Parameters.AddWithValue("@Description", txtDescription.Text);

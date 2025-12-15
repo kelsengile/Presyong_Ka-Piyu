@@ -90,7 +90,13 @@ namespace Presyong_Ka_Piyu.Main.forms.PopUp_Forms
             using var conn = new SQLiteConnection(connectionString);
             conn.Open();
 
-            string sql = "SELECT Id, Name, LocationID FROM Stores WHERE 1=1 ";
+            string sql = @"
+                SELECT S.Id, S.Name, L.LocationName
+                    FROM Stores S
+                LEFT JOIN Locations L ON S.LocationId = L.Id
+                    WHERE 1=1
+            ";
+
 
             if (!string.IsNullOrEmpty(keyword))
                 sql += "AND Name LIKE @Keyword ";
@@ -118,7 +124,7 @@ namespace Presyong_Ka_Piyu.Main.forms.PopUp_Forms
                 {
                     int id = Convert.ToInt32(reader["Id"]); // capture the value in a local variable
                     string name = reader["Name"].ToString();
-                    string location = reader["LocationID"].ToString();
+                    string location = reader["LocationName"].ToString();
 
                     flpResults.Controls.Add(CreateItem(
                         name,
@@ -142,10 +148,11 @@ namespace Presyong_Ka_Piyu.Main.forms.PopUp_Forms
             conn.Open();
 
             string sql = @"
-                SELECT P.Id, P.Name, PR.Price
-                FROM Products P
-                LEFT JOIN Prices PR ON PR.ProductId = P.Id
-                WHERE 1=1 ";
+        SELECT P.Id, P.Name, PR.Price, S.Name AS StoreName
+        FROM Products P
+        LEFT JOIN Prices PR ON PR.ProductId = P.Id
+        LEFT JOIN Stores S ON S.Id = PR.StoreId
+        WHERE 1=1 ";
 
             if (!string.IsNullOrEmpty(keyword))
                 sql += "AND P.Name LIKE @Keyword ";
@@ -176,10 +183,12 @@ namespace Presyong_Ka_Piyu.Main.forms.PopUp_Forms
                     int id = Convert.ToInt32(reader["Id"]);
                     string name = reader["Name"].ToString();
                     string price = $"₱{reader["Price"]}";
+                    string store = reader["StoreName"].ToString();
 
+                    // Show Name | Price | Store
                     flpResults.Controls.Add(CreateItem(
                         name,
-                        price,
+                        $"{price} | {store}",
                         () => OpenProduct(id)
                     ));
                 }
@@ -198,7 +207,9 @@ namespace Presyong_Ka_Piyu.Main.forms.PopUp_Forms
                 Text = text,
                 Font = new Font("Segoe UI", 12, FontStyle.Bold),
                 AutoSize = true,
-                Margin = new Padding(5, 15, 5, 5)
+                Margin = new Padding(5, 15, 5, 5),
+                BackColor = ThemeManager.IsDarkMode ? Color.FromArgb(40, 40, 40) : ThemeManager.LabelBackColor,
+                ForeColor = ThemeManager.IsDarkMode ? Color.White : ThemeManager.LabelForeColor
             };
         }
 
@@ -209,7 +220,9 @@ namespace Presyong_Ka_Piyu.Main.forms.PopUp_Forms
                 Text = text,
                 Font = new Font("Segoe UI", 10, FontStyle.Bold),
                 AutoSize = true,
-                Margin = new Padding(15, 5, 5, 5)
+                Margin = new Padding(15, 5, 5, 5),
+                BackColor = ThemeManager.IsDarkMode ? Color.FromArgb(40, 40, 40) : ThemeManager.LabelBackColor,
+                ForeColor = ThemeManager.IsDarkMode ? Color.White : ThemeManager.LabelForeColor
             };
         }
 
@@ -220,14 +233,18 @@ namespace Presyong_Ka_Piyu.Main.forms.PopUp_Forms
                 Width = 460,
                 Height = 35,
                 Cursor = Cursors.Hand,
-                Margin = new Padding(25, 2, 5, 2)
+                Margin = new Padding(25, 2, 5, 2),
+                BackColor = ThemeManager.IsDarkMode ? Color.FromArgb(40, 40, 40) : ThemeManager.LabelBackColor
             };
 
             Label lbl = new Label
             {
                 Text = $"{left} | {right}",
                 Dock = DockStyle.Fill,
-                TextAlign = ContentAlignment.MiddleLeft
+                TextAlign = ContentAlignment.MiddleLeft,
+                BackColor = ThemeManager.IsDarkMode ? Color.FromArgb(40, 40, 40) : ThemeManager.LabelBackColor,
+                ForeColor = ThemeManager.IsDarkMode ? Color.White : ThemeManager.LabelForeColor,
+                Font = new Font(ThemeManager.SelectedFont, 10)
             };
 
             panel.Controls.Add(lbl);
@@ -244,7 +261,9 @@ namespace Presyong_Ka_Piyu.Main.forms.PopUp_Forms
                 Text = text,
                 Font = new Font("Segoe UI", 10, FontStyle.Italic),
                 AutoSize = true,
-                Margin = new Padding(20)
+                Margin = new Padding(20),
+                BackColor = ThemeManager.IsDarkMode ? Color.FromArgb(40, 40, 40) : ThemeManager.LabelBackColor,
+                ForeColor = ThemeManager.IsDarkMode ? Color.White : ThemeManager.LabelForeColor
             };
         }
 
