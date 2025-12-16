@@ -1,4 +1,5 @@
 ﻿using Presyong_Ka_Piyu.Main.forms.PopUp_Forms.Info;
+using Presyong_Ka_Piyu.Main.programs;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -17,6 +18,7 @@ namespace Presyong_Ka_Piyu.Main.forms.Button_Form
         public UC_AddCategory()
         {
             InitializeComponent();
+            
             LoadCategoryTypes();
         }
 

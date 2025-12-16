@@ -34,6 +34,8 @@ namespace Presyong_Ka_Piyu.Properties {
         }
 
         public static Image LSPU_MainCampus_Map { get; internal set; }
+        public static Image FINAL { get; internal set; }
+        public static Image LSPU_MainCampus_Map__20251216111628_ { get; internal set; }
 
         /// <summary>
         ///   Returns the cached ResourceManager instance used by this class.

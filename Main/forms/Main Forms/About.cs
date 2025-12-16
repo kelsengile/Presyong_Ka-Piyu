@@ -83,7 +83,7 @@ namespace Presyong_Ka_Piyu.Main.forms.Main_Forms
             add.Show();
         }
 
-       
+
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
@@ -91,6 +91,38 @@ namespace Presyong_Ka_Piyu.Main.forms.Main_Forms
         }
 
         private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void aboutlose()
+        {
+            for (int i = Application.OpenForms.Count - 1; i >= 0; i--)
+            {
+                Form frm = Application.OpenForms[i];
+
+                if (frm is About 
+                    
+                    )
+                {
+                    frm.Close();
+                }
+            }
+        }
+
+        private void btn_Contact_Click(object sender, EventArgs e)
+        {
+            aboutlose();
+            Feedback feedback = new Feedback();
+            feedback.Show();
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
         {
 
         }

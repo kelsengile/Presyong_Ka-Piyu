@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
@@ -89,6 +90,62 @@ namespace Presyong_Ka_Piyu.Main.forms.Main_Forms
         private void label1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            string url = "https://www.facebook.com/profile.php?id=61585260779651"; // Replace with your website
+            try
+            {
+                Process.Start(new ProcessStartInfo
+                {
+                    FileName = url,
+                    UseShellExecute = true
+                });
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Unable to open the website. " + ex.Message);
+            }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            string url = "https://www.instagram.com/presyongkapiyu/"; // Replace with your website
+            try
+            {
+                Process.Start(new ProcessStartInfo
+                {
+                    FileName = url,
+                    UseShellExecute = true
+                });
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Unable to open the website. " + ex.Message);
+            }
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string email = "presyongkasgkapiyu@gmail.com";
+                string subject = Uri.EscapeDataString("Hello from Presyong Ka-Piyu App");
+                string body = Uri.EscapeDataString("Hi,\n\nI would like to contact you regarding...");
+
+                string mailto = $"mailto:{email}?subject={subject}&body={body}";
+
+                Process.Start(new ProcessStartInfo
+                {
+                    FileName = mailto,
+                    UseShellExecute = true
+                });
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Unable to open email client. " + ex.Message);
+            }
         }
     }
 }

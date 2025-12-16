@@ -72,6 +72,7 @@ namespace Presyong_Ka_Piyu.Main.forms
             HideAll();
             ucProduct.Show();
             ucProduct.BringToFront();
+            
         }
 
         private void btn_AddShop_Click(object sender, EventArgs e)

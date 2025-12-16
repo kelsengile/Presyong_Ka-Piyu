@@ -130,7 +130,10 @@ namespace Presyong_Ka_Piyu.Main.programs
 
         private static void SeedDefaultLocations(SQLiteConnection conn)
         {
-            string[] defaultLocations = { "Cafeteria 1", "Cafeteria 2", "Print Shop 1", "Print Shop 2", "BAO", "GATE1", "GATE2", "Activity Center", "CCS", "CAS", "CIT", "CCJE", "CBAA", "CTE", "CIHTM", "CONAH", "COE", "Automotive", "Hotel", "Church", "Admin", "Library", "Court", "The Gears", "OPEN FIELD", "GRAND STAND"};
+            string[] defaultLocations = { "Cafeteria 1", "Cafeteria 2", "Xerox Service", "Printing Service", 
+                "BAO", "GATE1", "GATE2", "Activity Center", "CCS", "CTE/CAS", "CIT", "CCJE", "CBAA",  "CIHTM", 
+                "CONAH", "COE", "Automotive", "Hotel", "Church", "Admin", "Library", "Court", "The Gears", "OPEN FIELD"
+                , "GRAND STAND"};
 
             foreach (var location in defaultLocations)
             {
