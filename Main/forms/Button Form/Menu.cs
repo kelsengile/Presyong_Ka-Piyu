@@ -18,7 +18,7 @@ namespace Presyong_Ka_Piyu.Main.forms.PopUp_Forms
     {
         private int LoggedInUserId;
         private string connectionString = @"Data Source=C:\Users\conel\Downloads\Programs\Projects\Presyong_Ka-Piyu\Main\data\Presyong_Ka-Piyu_Database.db";
-        
+
 
         public Menu(int userId)
         {
@@ -28,6 +28,9 @@ namespace Presyong_Ka_Piyu.Main.forms.PopUp_Forms
             LoggedInUserId = userId;
             LoadUserInfo();
         }
+
+
+
 
 
         private void LoadUserInfo()
@@ -49,7 +52,7 @@ namespace Presyong_Ka_Piyu.Main.forms.PopUp_Forms
                             string schoolID = reader["SchoolID"].ToString();
 
                             // Set TextBoxes
-                            
+
 
                             // Set profile picture
                             string path = reader["ProfilePicture"].ToString();
@@ -82,7 +85,7 @@ namespace Presyong_Ka_Piyu.Main.forms.PopUp_Forms
                     frm is Main_Forms.Help ||
                     frm is Map ||
                     frm is Settings ||
-                    frm is UserInfo 
+                    frm is UserInfo
                     )
                 {
                     frm.Close();
@@ -97,7 +100,7 @@ namespace Presyong_Ka_Piyu.Main.forms.PopUp_Forms
 
             UserInfo userinfo = new UserInfo(Session.LoggedInUserId);
             userinfo.Show();
-            
+
         }
 
         private void btnMap_Click(object sender, EventArgs e)
@@ -106,7 +109,7 @@ namespace Presyong_Ka_Piyu.Main.forms.PopUp_Forms
 
             Map map = new Map();
             map.Show();
-            
+
         }
 
         private void btnSettings_Click(object sender, EventArgs e)
@@ -115,7 +118,7 @@ namespace Presyong_Ka_Piyu.Main.forms.PopUp_Forms
 
             Settings settings = new Settings();
             settings.Show();
-            
+
         }
 
         private void btnFeedback_Click(object sender, EventArgs e)
@@ -140,7 +143,12 @@ namespace Presyong_Ka_Piyu.Main.forms.PopUp_Forms
 
             About about = new About();
             about.Show();
-            
+
+        }
+
+        private void picProfile_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

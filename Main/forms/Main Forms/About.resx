@@ -117,4 +117,16 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="label3.Text" xml:space="preserve">
+    <value>Presyong Ka-Piyu is a convenient and user-friendly platform designed to help students, 
+faculty, and visitors navigate the LSPU Main Campus marketplace efficiently. The application allows 
+users to: 
+
+   - Browse products and services available at various campus stores. 
+   - View store details including location, contact, description, rating, and favorite status.
+   - Check product prices and categories, helping you make informed decisions. 
+   - Locate campus stores easily through an interactive campus map with location pins.
+
+Our goal is to simplify campus life by providing a centralized, digital marketplace experience.</value>
+  </data>
 </root>

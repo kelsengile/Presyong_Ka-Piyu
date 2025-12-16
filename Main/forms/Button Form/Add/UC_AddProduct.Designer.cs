@@ -53,9 +53,6 @@
             ((System.ComponentModel.ISupportInitialize)numRating).BeginInit();
             ((System.ComponentModel.ISupportInitialize)picImage).BeginInit();
             SuspendLayout();
-
-            this.StartPosition = FormStartPosition.Manual;
-
             // 
             // txtName
             // 
@@ -119,29 +116,35 @@
             // 
             // btnBrowse
             // 
+            btnBrowse.BackColor = SystemColors.ControlLightLight;
             btnBrowse.Location = new Point(19, 228);
             btnBrowse.Name = "btnBrowse";
             btnBrowse.Size = new Size(111, 22);
             btnBrowse.TabIndex = 7;
             btnBrowse.Text = "Browse Image";
+            btnBrowse.UseVisualStyleBackColor = false;
             btnBrowse.Click += btnBrowse_Click;
             // 
             // btnSave
             // 
+            btnSave.BackColor = SystemColors.Control;
             btnSave.Location = new Point(364, 462);
             btnSave.Name = "btnSave";
             btnSave.Size = new Size(75, 30);
             btnSave.TabIndex = 8;
             btnSave.Text = "Save";
+            btnSave.UseVisualStyleBackColor = false;
             btnSave.Click += btnSave_Click;
             // 
             // btnCancel
             // 
+            btnCancel.BackColor = SystemColors.Control;
             btnCancel.Location = new Point(283, 462);
             btnCancel.Name = "btnCancel";
             btnCancel.Size = new Size(75, 30);
             btnCancel.TabIndex = 9;
             btnCancel.Text = "Cancel";
+            btnCancel.UseVisualStyleBackColor = false;
             btnCancel.Click += btnCancel_Click;
             // 
             // chkFavorite
@@ -221,6 +224,7 @@
             // 
             // UC_AddProduct
             // 
+            BackColor = SystemColors.GradientActiveCaption;
             Controls.Add(label7);
             Controls.Add(label6);
             Controls.Add(label5);

@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Presyong_Ka_Piyu.Main.forms.PopUp_Forms.Info;
+using Presyong_Ka_Piyu.Main.programs;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -16,6 +18,7 @@ namespace Presyong_Ka_Piyu.Main.forms.Button_Form
         public UC_AddCategory()
         {
             InitializeComponent();
+            
             LoadCategoryTypes();
         }
 
@@ -61,7 +64,7 @@ namespace Presyong_Ka_Piyu.Main.forms.Button_Form
             }
         }
 
-        
+
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
@@ -72,6 +75,12 @@ namespace Presyong_Ka_Piyu.Main.forms.Button_Form
         private void UC_AddCategory_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            CategoryInfo categoryInfoForm = new CategoryInfo();
+            categoryInfoForm.Show();
         }
     }
 }

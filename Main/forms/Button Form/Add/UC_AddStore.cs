@@ -24,16 +24,21 @@ namespace Presyong_Ka_Piyu.Main.forms.Button_Form
         // Developer-defined locations
         private void LoadLocations()
         {
-            cmbLocation.Items.AddRange(new string[]
-            {
-                "Main Canteen",
-                "Engineering Building",
-                "Science Building",
-                "Gym Area",
-                "Library Area"
-            });
+            cmbLocation.DataSource = null; // clear previous items
 
-            cmbLocation.SelectedIndex = 0;
+            using var conn = new SQLiteConnection(connectionString);
+            conn.Open();
+
+            using var cmd = new SQLiteCommand("SELECT Id, LocationName FROM Locations ORDER BY Id", conn);
+            DataTable dt = new DataTable();
+            dt.Load(cmd.ExecuteReader());
+
+            cmbLocation.DataSource = dt;
+            cmbLocation.DisplayMember = "LocationName"; // what the user sees
+            cmbLocation.ValueMember = "Id";             // the Id used for foreign key in Stores table
+
+            if (dt.Rows.Count > 0)
+                cmbLocation.SelectedIndex = 0; // select first location by default
         }
 
         private void LoadCategories()
@@ -84,12 +89,12 @@ namespace Presyong_Ka_Piyu.Main.forms.Button_Form
             {
                 using var cmd = new SQLiteCommand(@"
                     INSERT INTO Stores
-                    (Name, Location, Contact, ImagePath, Description, Rating, CategoryId, IsFavorite)
+                    (Name, LocationID, Contact, ImagePath, Description, Rating, CategoryId, IsFavorite)
                     VALUES
-                    (@Name, @Location, @Contact, @ImagePath, @Description, @Rating, @CategoryId, @IsFavorite);", conn);
+                    (@Name, @LocationID, @Contact, @ImagePath, @Description, @Rating, @CategoryId, @IsFavorite);", conn);
 
                 cmd.Parameters.AddWithValue("@Name", txtName.Text);
-                cmd.Parameters.AddWithValue("@Location", cmbLocation.SelectedItem.ToString());
+                cmd.Parameters.AddWithValue("@LocationID", cmbLocation.SelectedValue);
                 cmd.Parameters.AddWithValue("@Contact", txtContact.Text);
                 cmd.Parameters.AddWithValue("@ImagePath", imagePath);
                 cmd.Parameters.AddWithValue("@Description", txtDescription.Text);

@@ -18,7 +18,7 @@ namespace Presyong_Ka_Piyu.Main.forms.Main_Forms
 {
     public partial class UserInfo : Form
     {
-        private int LoggedInUserId;
+        public int LoggedInUserId;
         private string connectionString = @"Data Source=C:\Users\conel\Downloads\Programs\Projects\Presyong_Ka-Piyu\Main\data\Presyong_Ka-Piyu_Database.db";
 
 
@@ -393,6 +393,52 @@ namespace Presyong_Ka_Piyu.Main.forms.Main_Forms
             ChangePassword changepassword = new ChangePassword(LoggedInUserId);
             changepassword.Show();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            DialogResult confirm = MessageBox.Show(
+        "Are you sure you want to permanently delete your account?",
+        "Delete Account",
+        MessageBoxButtons.YesNo,
+        MessageBoxIcon.Warning);
+
+            if (confirm != DialogResult.Yes)
+                return;
+
+            try
+            {
+                using (var con = new SQLiteConnection(connectionString))
+                {
+                    con.Open();
+
+                    string deleteQuery = "DELETE FROM Users WHERE AccountId = @id";
+
+                    using (var cmd = new SQLiteCommand(deleteQuery, con))
+                    {
+                        cmd.Parameters.AddWithValue("@id", LoggedInUserId);
+                        cmd.ExecuteNonQuery();
+                    }
+                }
+
+                CustomMessageBox.Show("Your account has been deleted.");
+
+                // Close all open forms
+                foreach (Form frm in Application.OpenForms.Cast<Form>().ToList())
+                {
+                    frm.Close();
+                }
+
+                // Return to login screen
+                Login login = new Login();
+                login.Show();
+            }
+            catch (Exception ex)
+            {
+                CustomMessageBox.Show("Error deleting account:\n" + ex.Message);
+            }
+        }
+
     }
+    
 }
     

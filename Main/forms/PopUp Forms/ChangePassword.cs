@@ -123,7 +123,7 @@ namespace Presyong_Ka_Piyu.Main.forms.PopUp_Forms
                 if (frm is PopUp_Forms.Menu ||
                     frm is UserInfo ||
                     frm is Add ||
-                    frm is ShopInfo ||
+                    frm is StoreInfo ||
                     frm is ConfirmDelete ||
                     frm is DataBaseViewer ||
                     frm is ProductInfo ||

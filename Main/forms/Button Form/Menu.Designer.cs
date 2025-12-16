@@ -47,6 +47,7 @@
             picProfile.SizeMode = PictureBoxSizeMode.Zoom;
             picProfile.TabIndex = 0;
             picProfile.TabStop = false;
+            picProfile.Click += picProfile_Click;
             // 
             // btnUserInfo
             // 

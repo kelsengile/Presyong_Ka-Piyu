@@ -12,6 +12,12 @@ namespace Presyong_Ka_Piyu.Main.programs
         public static bool IsDarkMode => Properties.Settings.Default.DarkMode;
         public static string SelectedFont => Properties.Settings.Default.AppFont;
 
+        public static Color DarkBackColor { get; set; } = Color.FromArgb(40, 40, 40);
+        public static Color DarkPanelBackColor { get; set; } = Color.FromArgb(55, 55, 55);
+        public static Color DarkButtonBackColor { get; set; } = Color.FromArgb(80, 80, 80);
+        public static Color DarkForeColor { get; set; } = Color.LightGray;
+        public static Color DarkLabelForeColor { get; set; } = Color.Gainsboro;
+
         // User-defined colors for normal mode
         public static Color DefaultBackColor { get; set; } = SystemColors.GradientActiveCaption;
         public static Color DefaultForeColor { get; set; } = Color.Black;
@@ -27,6 +33,7 @@ namespace Presyong_Ka_Piyu.Main.programs
 
         public static Color TextBoxBackColor { get; set; } = SystemColors.Control;
         public static Color TextBoxForeColor { get; set; } = Color.Black;
+        public static Color DarkUserControlBackColor { get; set; } = Color.FromArgb(45, 45, 45);
 
         // Apply theme to any form
         public static void ApplyTheme(Form form)
@@ -35,9 +42,10 @@ namespace Presyong_Ka_Piyu.Main.programs
 
             if (IsDarkMode)
             {
-                form.BackColor = Color.FromArgb(40, 40, 40);
-                form.ForeColor = Color.White;
+                form.BackColor = DarkBackColor;
+                form.ForeColor = DarkForeColor;
             }
+
             else
             {
                 form.BackColor = DefaultBackColor;
@@ -56,14 +64,36 @@ namespace Presyong_Ka_Piyu.Main.programs
 
                 if (IsDarkMode)
                 {
-                    c.ForeColor = Color.White;
-
                     if (c is Panel)
-                        c.BackColor = Color.FromArgb(55, 55, 55);
+                    {
+                        c.BackColor = DarkPanelBackColor;
+                        c.ForeColor = DarkForeColor;
+                    }
                     else if (c is Button)
-                        c.BackColor = Color.FromArgb(80, 80, 80);
+                    {
+                        c.BackColor = DarkButtonBackColor;
+                        c.ForeColor = DarkForeColor;
+                    }
+                    else if (c is Label)
+                    {
+                        c.BackColor = Color.Transparent;
+                        c.ForeColor = DarkLabelForeColor;
+                    }
+                    else if (c is TextBox)
+                    {
+                        c.BackColor = Color.FromArgb(60, 60, 60);
+                        c.ForeColor = DarkForeColor;
+                    }
+                    else if (c is UserControl)
+                    {
+                        c.BackColor = DarkUserControlBackColor;
+                        c.ForeColor = DarkForeColor;
+                    }
                     else
-                        c.BackColor = Color.FromArgb(40, 40, 40);
+                    {
+                        c.BackColor = DarkBackColor;
+                        c.ForeColor = DarkForeColor;
+                    }
                 }
                 else
                 {

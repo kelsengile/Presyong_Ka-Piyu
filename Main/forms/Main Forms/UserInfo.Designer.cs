@@ -70,7 +70,6 @@
             btnSave = new Button();
             btnPanel = new Button();
             btnSearch = new Button();
-            btnAdd = new Button();
             label1 = new Label();
             panel1 = new Panel();
             label2 = new Label();
@@ -98,6 +97,7 @@
             btnChange_Email = new Button();
             btn_ChangePassword = new Button();
             label20 = new Label();
+            button1 = new Button();
             ((System.ComponentModel.ISupportInitialize)picProfile).BeginInit();
             panel1.SuspendLayout();
             SuspendLayout();
@@ -201,11 +201,13 @@
             // 
             // btnSave
             // 
-            btnSave.Location = new Point(591, 605);
+            btnSave.BackColor = SystemColors.Control;
+            btnSave.Location = new Point(694, 619);
             btnSave.Name = "btnSave";
             btnSave.Size = new Size(78, 30);
             btnSave.TabIndex = 19;
             btnSave.Text = "Save";
+            btnSave.UseVisualStyleBackColor = false;
             btnSave.Click += btnSave_Click;
             // 
             // btnPanel
@@ -229,17 +231,6 @@
             btnSearch.Text = "Search";
             btnSearch.UseVisualStyleBackColor = false;
             btnSearch.Click += btnSearch_Click;
-            // 
-            // btnAdd
-            // 
-            btnAdd.BackColor = SystemColors.Control;
-            btnAdd.Location = new Point(686, 605);
-            btnAdd.Name = "btnAdd";
-            btnAdd.Size = new Size(80, 30);
-            btnAdd.TabIndex = 3;
-            btnAdd.Text = "Add";
-            btnAdd.UseVisualStyleBackColor = false;
-            btnAdd.Click += btnAdd_Click;
             // 
             // label1
             // 
@@ -493,10 +484,21 @@
             label20.TabIndex = 41;
             label20.Text = "Security:";
             // 
+            // button1
+            // 
+            button1.Location = new Point(462, 619);
+            button1.Name = "button1";
+            button1.Size = new Size(104, 30);
+            button1.TabIndex = 42;
+            button1.Text = "Delete Account";
+            button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
+            // 
             // UserInfo
             // 
             BackColor = SystemColors.GradientActiveCaption;
             ClientSize = new Size(784, 661);
+            Controls.Add(button1);
             Controls.Add(label20);
             Controls.Add(btn_ChangePassword);
             Controls.Add(btnChange_Email);
@@ -522,7 +524,6 @@
             Controls.Add(label4);
             Controls.Add(label3);
             Controls.Add(label2);
-            Controls.Add(btnAdd);
             Controls.Add(panel1);
             Controls.Add(txtUsername);
             Controls.Add(txtFullName);
@@ -583,5 +584,6 @@
         private Button btnChange_Email;
         private Button btn_ChangePassword;
         private Label label20;
+        private Button button1;
     }
 }

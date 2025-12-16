@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-
             txtCategoryName = new TextBox();
             cmbCategoryType = new ComboBox();
             txtDescription = new TextBox();
@@ -38,10 +37,8 @@
             label2 = new Label();
             label3 = new Label();
             label4 = new Label();
+            button1 = new Button();
             SuspendLayout();
-
-            this.StartPosition = FormStartPosition.Manual;
-
             // 
             // txtCategoryName
             // 
@@ -68,20 +65,24 @@
             // 
             // btnSave
             // 
+            btnSave.BackColor = SystemColors.Control;
             btnSave.Location = new Point(362, 454);
             btnSave.Name = "btnSave";
             btnSave.Size = new Size(75, 30);
             btnSave.TabIndex = 3;
             btnSave.Text = "Save";
+            btnSave.UseVisualStyleBackColor = false;
             btnSave.Click += btnSave_Click;
             // 
             // btnCancel
             // 
+            btnCancel.BackColor = SystemColors.Control;
             btnCancel.Location = new Point(272, 454);
             btnCancel.Name = "btnCancel";
             btnCancel.Size = new Size(75, 30);
             btnCancel.TabIndex = 4;
             btnCancel.Text = "Cancel";
+            btnCancel.UseVisualStyleBackColor = false;
             btnCancel.Click += btnCancel_Click;
             // 
             // label1
@@ -121,8 +122,21 @@
             label4.TabIndex = 8;
             label4.Text = "Description:";
             // 
+            // button1
+            // 
+            button1.BackColor = SystemColors.Control;
+            button1.Location = new Point(20, 454);
+            button1.Name = "button1";
+            button1.Size = new Size(107, 30);
+            button1.TabIndex = 9;
+            button1.Text = "View Categories";
+            button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
+            // 
             // UC_AddCategory
             // 
+            BackColor = SystemColors.GradientActiveCaption;
+            Controls.Add(button1);
             Controls.Add(label4);
             Controls.Add(label3);
             Controls.Add(label2);
@@ -151,5 +165,6 @@
         private Label label3;
         private Label label4;
         private FormStartPosition StartPosition;
+        private Button button1;
     }
 }
