@@ -21,7 +21,7 @@ namespace Presyong_Ka_Piyu.Main.forms
         public Add()
         {
             InitializeComponent();
-            ThemeManager.ApplyTheme(this);
+            
 
             LoadUserControls();
 
@@ -31,6 +31,7 @@ namespace Presyong_Ka_Piyu.Main.forms
 
             ucProduct.Show();
             ucProduct.BringToFront();
+            ThemeManager.ApplyTheme(this);
 
         }
 

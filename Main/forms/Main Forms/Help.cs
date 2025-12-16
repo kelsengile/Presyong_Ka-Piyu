@@ -37,10 +37,11 @@ namespace Presyong_Ka_Piyu.Main.forms.Main_Forms
         public Help()
         {
             InitializeComponent();
-            ThemeManager.ApplyTheme(this);
+            
 
 
             LoadFAQ();
+            ThemeManager.ApplyTheme(this);
         }
 
         private void LoadFAQ()
