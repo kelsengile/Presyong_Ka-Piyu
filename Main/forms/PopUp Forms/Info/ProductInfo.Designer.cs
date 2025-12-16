@@ -41,6 +41,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ProductInfo));
             txtName = new TextBox();
             cmbCategory = new ComboBox();
             txtDescription = new TextBox();
@@ -268,6 +269,7 @@
             Controls.Add(numPrice);
             Controls.Add(btnSave);
             Controls.Add(btnCancel);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "ProductInfo";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Product Details";

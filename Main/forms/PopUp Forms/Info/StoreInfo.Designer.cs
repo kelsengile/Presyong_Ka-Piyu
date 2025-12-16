@@ -38,6 +38,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(StoreInfo));
             txtName = new TextBox();
             flpStoreProducts = new FlowLayoutPanel();
             txtContact = new TextBox();
@@ -277,6 +278,7 @@
             Controls.Add(btnSave);
             Controls.Add(btnCancel);
             Controls.Add(flpStoreProducts);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             MaximumSize = new Size(782, 644);
             MinimumSize = new Size(782, 644);
             Name = "StoreInfo";

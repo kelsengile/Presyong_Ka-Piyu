@@ -16,6 +16,7 @@
 
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ConfirmDelete));
             lblMsg = new Label();
             btnConfirm = new Button();
             btnCancel = new Button();
@@ -60,6 +61,7 @@
             Controls.Add(btnConfirm);
             Controls.Add(btnCancel);
             FormBorderStyle = FormBorderStyle.FixedDialog;
+            Icon = (Icon)resources.GetObject("$this.Icon");
             MaximizeBox = false;
             Name = "ConfirmDelete";
             StartPosition = FormStartPosition.CenterScreen;

@@ -16,6 +16,7 @@
 
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DataBaseViewer));
             comboTables = new ComboBox();
             btnLoadTable = new Button();
             gridView = new DataGridView();
@@ -59,6 +60,7 @@
             Controls.Add(btnLoadTable);
             Controls.Add(gridView);
             FormBorderStyle = FormBorderStyle.FixedSingle;
+            Icon = (Icon)resources.GetObject("$this.Icon");
             MaximizeBox = false;
             Name = "DataBaseViewer";
             StartPosition = FormStartPosition.CenterScreen;

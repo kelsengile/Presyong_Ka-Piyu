@@ -35,6 +35,7 @@
             btnAdd = new Button();
             label1 = new Label();
             panel1 = new Panel();
+            pictureBox1 = new PictureBox();
             panel2 = new Panel();
             btn_CIT2 = new Button();
             btn_Cafeteria1 = new Button();
@@ -63,6 +64,7 @@
             btn_OpenField = new Button();
             btn_GrandStand = new Button();
             panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel2.SuspendLayout();
             SuspendLayout();
             // 
@@ -114,12 +116,25 @@
             // panel1
             // 
             panel1.BackColor = SystemColors.ActiveCaption;
+            panel1.Controls.Add(pictureBox1);
             panel1.Controls.Add(label1);
             panel1.Controls.Add(btnSearch);
             panel1.Location = new Point(-5, 0);
             panel1.Name = "panel1";
             panel1.Size = new Size(799, 85);
             panel1.TabIndex = 5;
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.BackgroundImageLayout = ImageLayout.None;
+            pictureBox1.BorderStyle = BorderStyle.Fixed3D;
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Location = new Point(617, 15);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(52, 50);
+            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox1.TabIndex = 5;
+            pictureBox1.TabStop = false;
             // 
             // panel2
             // 
@@ -505,6 +520,7 @@
             Controls.Add(btnPanel);
             Controls.Add(panel2);
             Controls.Add(panel1);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             MaximumSize = new Size(800, 700);
             MinimumSize = new Size(800, 700);
             Name = "Map";
@@ -512,6 +528,7 @@
             Text = "Campus Map";
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             panel2.ResumeLayout(false);
             ResumeLayout(false);
         }
@@ -556,6 +573,7 @@
         private Button btn_OpenField;
         private Button btn_GrandStand;
         private Button btn_CIT2;
+        private PictureBox pictureBox1;
     }
 
 }

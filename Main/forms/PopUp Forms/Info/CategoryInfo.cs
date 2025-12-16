@@ -12,7 +12,7 @@ namespace Presyong_Ka_Piyu.Main.forms.PopUp_Forms.Info
 {
     public partial class CategoryInfo : Form
     {
-        private string connectionString = @"Data Source=C:\\Users\\conel\\Downloads\\Programs\\Projects\\Presyong_Ka-Piyu\\Main\\data\\Presyong_Ka-Piyu_Database.db";
+        private string connectionString = @"Data Source=C:\Users\acer nitro v15\source\repos\Presyong_Ka-Piyu\Design\Main\data\Presyong_Ka-Piyu_Database.db";
         private int? selectedCategoryId = null;
         private Color defaultPanelColor = ThemeManager.IsDarkMode ? Color.FromArgb(40, 40, 40) : ThemeManager.LabelBackColor;
         private Color selectedPanelColor = Color.CadetBlue;

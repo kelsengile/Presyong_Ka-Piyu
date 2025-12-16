@@ -28,11 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Settings));
             btnPanel = new Button();
             btnSearch = new Button();
             btnAdd = new Button();
             label1 = new Label();
             panel1 = new Panel();
+            pictureBox1 = new PictureBox();
             AccountSettinglabel = new Label();
             btnuserinfo = new Button();
             DataLabel = new Label();
@@ -48,6 +50,7 @@
             chkDarkMode = new CheckBox();
             btnChangeFont = new Button();
             panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // btnPanel
@@ -99,12 +102,25 @@
             // panel1
             // 
             panel1.BackColor = SystemColors.ActiveCaption;
+            panel1.Controls.Add(pictureBox1);
             panel1.Controls.Add(btnSearch);
             panel1.Controls.Add(label1);
             panel1.Location = new Point(-5, 0);
             panel1.Name = "panel1";
             panel1.Size = new Size(789, 85);
             panel1.TabIndex = 5;
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.BackgroundImageLayout = ImageLayout.None;
+            pictureBox1.BorderStyle = BorderStyle.Fixed3D;
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Location = new Point(364, 20);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(55, 50);
+            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox1.TabIndex = 5;
+            pictureBox1.TabStop = false;
             // 
             // AccountSettinglabel
             // 
@@ -270,6 +286,7 @@
             Controls.Add(btnAdd);
             Controls.Add(btnPanel);
             Controls.Add(panel1);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             MaximumSize = new Size(800, 700);
             MinimumSize = new Size(800, 700);
             Name = "Settings";
@@ -277,6 +294,7 @@
             Text = "Settings";
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
 
@@ -309,5 +327,6 @@
         private GroupBox grpAppearance;
         private CheckBox chkDarkMode;
         private Button btnChangeFont;
+        private PictureBox pictureBox1;
     }
 }

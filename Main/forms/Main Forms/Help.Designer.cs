@@ -29,14 +29,17 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Help));
             flpFAQ = new FlowLayoutPanel();
             btnPanel = new Button();
             btnSearch = new Button();
             btnAdd = new Button();
             label1 = new Label();
             panel1 = new Panel();
+            pictureBox1 = new PictureBox();
             button1 = new Button();
             panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // flpFAQ
@@ -99,6 +102,7 @@
             // panel1
             // 
             panel1.BackColor = SystemColors.ActiveCaption;
+            panel1.Controls.Add(pictureBox1);
             panel1.Controls.Add(label1);
             panel1.Controls.Add(btnPanel);
             panel1.Controls.Add(btnSearch);
@@ -106,6 +110,18 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(789, 85);
             panel1.TabIndex = 5;
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.BackgroundImageLayout = ImageLayout.None;
+            pictureBox1.BorderStyle = BorderStyle.Fixed3D;
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Location = new Point(324, 15);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(47, 50);
+            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox1.TabIndex = 5;
+            pictureBox1.TabStop = false;
             // 
             // button1
             // 
@@ -126,6 +142,7 @@
             Controls.Add(btnAdd);
             Controls.Add(panel1);
             Controls.Add(flpFAQ);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             MaximumSize = new Size(800, 700);
             MinimumSize = new Size(800, 700);
             Name = "Help";
@@ -133,6 +150,7 @@
             Text = "Help";
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
 
 
@@ -146,6 +164,7 @@
         private Label label1;
         private Panel panel1;
         private Button button1;
+        private PictureBox pictureBox1;
     }
 
         #endregion

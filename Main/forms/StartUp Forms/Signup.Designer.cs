@@ -22,6 +22,7 @@
 
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Signup));
             txtUsername = new TextBox();
             txtPassword = new TextBox();
             txtConfirmPassword = new TextBox();
@@ -29,12 +30,14 @@
             btnSignup = new Button();
             btnBack = new Button();
             panel1 = new Panel();
+            pictureBox1 = new PictureBox();
             signuplabel = new Label();
             emaillabel = new Label();
             confirmpasswordlabel = new Label();
             passwordlabel = new Label();
             usernamelabel = new Label();
             panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // txtUsername
@@ -92,6 +95,7 @@
             // panel1
             // 
             panel1.BackColor = SystemColors.GradientActiveCaption;
+            panel1.Controls.Add(pictureBox1);
             panel1.Controls.Add(signuplabel);
             panel1.Controls.Add(emaillabel);
             panel1.Controls.Add(confirmpasswordlabel);
@@ -108,11 +112,23 @@
             panel1.Size = new Size(380, 430);
             panel1.TabIndex = 6;
             // 
+            // pictureBox1
+            // 
+            pictureBox1.BackgroundImageLayout = ImageLayout.None;
+            pictureBox1.BorderStyle = BorderStyle.Fixed3D;
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Location = new Point(160, 38);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(51, 47);
+            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox1.TabIndex = 11;
+            pictureBox1.TabStop = false;
+            // 
             // signuplabel
             // 
             signuplabel.AutoSize = true;
             signuplabel.Font = new Font("Segoe UI", 15F);
-            signuplabel.Location = new Point(145, 64);
+            signuplabel.Location = new Point(145, 84);
             signuplabel.Name = "signuplabel";
             signuplabel.Size = new Size(82, 28);
             signuplabel.TabIndex = 10;
@@ -159,6 +175,7 @@
             BackColor = SystemColors.ActiveCaption;
             ClientSize = new Size(800, 450);
             Controls.Add(panel1);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             MaximumSize = new Size(816, 489);
             MinimumSize = new Size(816, 489);
             Name = "Signup";
@@ -166,6 +183,7 @@
             Text = "SignUp";
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
         }
 
@@ -195,5 +213,6 @@
         private Label emaillabel;
         private Label confirmpasswordlabel;
         private Label passwordlabel;
+        private PictureBox pictureBox1;
     }
 }

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ChangePassword));
             label1 = new Label();
             txt_CurrentPassword = new TextBox();
             txt_NewPassword = new TextBox();
@@ -37,6 +38,8 @@
             label2 = new Label();
             label3 = new Label();
             label4 = new Label();
+            pictureBox1 = new PictureBox();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // label1
@@ -118,12 +121,25 @@
             label4.TabIndex = 8;
             label4.Text = "Confirm Password";
             // 
+            // pictureBox1
+            // 
+            pictureBox1.BackgroundImageLayout = ImageLayout.None;
+            pictureBox1.BorderStyle = BorderStyle.Fixed3D;
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Location = new Point(157, 36);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(28, 32);
+            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox1.TabIndex = 13;
+            pictureBox1.TabStop = false;
+            // 
             // ChangePassword
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.GradientActiveCaption;
             ClientSize = new Size(350, 360);
+            Controls.Add(pictureBox1);
             Controls.Add(label4);
             Controls.Add(label3);
             Controls.Add(label2);
@@ -133,11 +149,13 @@
             Controls.Add(txt_NewPassword);
             Controls.Add(txt_CurrentPassword);
             Controls.Add(label1);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             MaximumSize = new Size(366, 399);
             MinimumSize = new Size(366, 399);
             Name = "ChangePassword";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "ChangePassword";
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -155,5 +173,6 @@
         private Label label2;
         private Label label3;
         private Label label4;
+        private PictureBox pictureBox1;
     }
 }

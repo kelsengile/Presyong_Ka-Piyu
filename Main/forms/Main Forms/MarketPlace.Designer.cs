@@ -32,6 +32,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MarketPlace));
             lblLocation = new Label();
             flpStores = new FlowLayoutPanel();
             panel1 = new Panel();
@@ -72,6 +73,7 @@
             ClientSize = new Size(784, 561);
             Controls.Add(flpStores);
             Controls.Add(panel1);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "MarketPlace";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "MarketPlace";

@@ -30,11 +30,14 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ChangeEmailOTP));
             txtOtp = new TextBox();
             btnVerify = new Button();
             btnResend = new Button();
             OTPverlabel = new Label();
             OTPlabel = new Label();
+            pictureBox1 = new PictureBox();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // txtOtp
@@ -70,7 +73,7 @@
             // 
             OTPverlabel.AutoSize = true;
             OTPverlabel.Font = new Font("Segoe UI", 15F);
-            OTPverlabel.Location = new Point(105, 47);
+            OTPverlabel.Location = new Point(102, 62);
             OTPverlabel.Name = "OTPverlabel";
             OTPverlabel.Size = new Size(150, 56);
             OTPverlabel.TabIndex = 3;
@@ -86,22 +89,37 @@
             OTPlabel.TabIndex = 4;
             OTPlabel.Text = "OTP:";
             // 
+            // pictureBox1
+            // 
+            pictureBox1.BackgroundImageLayout = ImageLayout.None;
+            pictureBox1.BorderStyle = BorderStyle.Fixed3D;
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Location = new Point(152, 22);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(44, 45);
+            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox1.TabIndex = 5;
+            pictureBox1.TabStop = false;
+            // 
             // ChangeEmailOTP
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.GradientActiveCaption;
             ClientSize = new Size(350, 360);
+            Controls.Add(pictureBox1);
             Controls.Add(OTPlabel);
             Controls.Add(OTPverlabel);
             Controls.Add(txtOtp);
             Controls.Add(btnVerify);
             Controls.Add(btnResend);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             MaximumSize = new Size(366, 399);
             MinimumSize = new Size(366, 399);
             Name = "ChangeEmailOTP";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "ChangeEmailOtp";
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -116,5 +134,6 @@
 
         private Label OTPverlabel;
         private Label OTPlabel;
+        private PictureBox pictureBox1;
     }
 }

@@ -10,7 +10,7 @@ namespace Presyong_Ka_Piyu
 
     public partial class Login : Form
     {
-        private readonly string dbPath = @"Data Source=C:\Users\conel\Downloads\Programs\Projects\Presyong_Ka-Piyu\Main\data\Presyong_Ka-Piyu_Database.db";
+        private readonly string dbPath = @"Data Source=C:\Users\acer nitro v15\source\repos\Presyong_Ka-Piyu\Design\Main\data\Presyong_Ka-Piyu_Database.db";
         private object? result;
         // tote
 

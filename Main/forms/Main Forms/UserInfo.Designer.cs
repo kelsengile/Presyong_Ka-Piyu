@@ -54,6 +54,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UserInfo));
             txtUsername = new TextBox();
             txtFullName = new TextBox();
             txtEmail = new TextBox();
@@ -72,6 +73,7 @@
             btnSearch = new Button();
             label1 = new Label();
             panel1 = new Panel();
+            pictureBox3 = new PictureBox();
             label2 = new Label();
             label3 = new Label();
             label4 = new Label();
@@ -98,8 +100,13 @@
             btn_ChangePassword = new Button();
             label20 = new Label();
             button1 = new Button();
+            pictureBox1 = new PictureBox();
+            pictureBox2 = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)picProfile).BeginInit();
             panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             SuspendLayout();
             // 
             // txtUsername
@@ -248,6 +255,7 @@
             // panel1
             // 
             panel1.BackColor = SystemColors.ActiveCaption;
+            panel1.Controls.Add(pictureBox3);
             panel1.Controls.Add(label1);
             panel1.Controls.Add(btnPanel);
             panel1.Controls.Add(btnSearch);
@@ -256,6 +264,18 @@
             panel1.Size = new Size(789, 85);
             panel1.TabIndex = 5;
             panel1.Paint += panel1_Paint;
+            // 
+            // pictureBox3
+            // 
+            pictureBox3.BackgroundImageLayout = ImageLayout.None;
+            pictureBox3.BorderStyle = BorderStyle.Fixed3D;
+            pictureBox3.Image = (Image)resources.GetObject("pictureBox3.Image");
+            pictureBox3.Location = new Point(440, 15);
+            pictureBox3.Name = "pictureBox3";
+            pictureBox3.Size = new Size(51, 50);
+            pictureBox3.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox3.TabIndex = 5;
+            pictureBox3.TabStop = false;
             // 
             // label2
             // 
@@ -494,10 +514,36 @@
             button1.UseVisualStyleBackColor = true;
             button1.Click += button1_Click;
             // 
+            // pictureBox1
+            // 
+            pictureBox1.BackgroundImageLayout = ImageLayout.None;
+            pictureBox1.BorderStyle = BorderStyle.Fixed3D;
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Location = new Point(38, 443);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(26, 32);
+            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox1.TabIndex = 43;
+            pictureBox1.TabStop = false;
+            // 
+            // pictureBox2
+            // 
+            pictureBox2.BackgroundImageLayout = ImageLayout.None;
+            pictureBox2.BorderStyle = BorderStyle.Fixed3D;
+            pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
+            pictureBox2.Location = new Point(38, 315);
+            pictureBox2.Name = "pictureBox2";
+            pictureBox2.Size = new Size(26, 32);
+            pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox2.TabIndex = 44;
+            pictureBox2.TabStop = false;
+            // 
             // UserInfo
             // 
             BackColor = SystemColors.GradientActiveCaption;
             ClientSize = new Size(784, 661);
+            Controls.Add(pictureBox2);
+            Controls.Add(pictureBox1);
             Controls.Add(button1);
             Controls.Add(label20);
             Controls.Add(btn_ChangePassword);
@@ -539,12 +585,16 @@
             Controls.Add(txtAddress);
             Controls.Add(picProfile);
             Controls.Add(btnSave);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "UserInfo";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "User Info";
             ((System.ComponentModel.ISupportInitialize)picProfile).EndInit();
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ResumeLayout(false);
             PerformLayout();
 
@@ -585,5 +635,8 @@
         private Button btn_ChangePassword;
         private Label label20;
         private Button button1;
+        private PictureBox pictureBox1;
+        private PictureBox pictureBox2;
+        private PictureBox pictureBox3;
     }
 }

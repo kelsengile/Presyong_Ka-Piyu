@@ -22,6 +22,7 @@
 
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ResetPassword));
             txtEmail = new TextBox();
             txtOtp = new TextBox();
             txtNewPassword = new TextBox();
@@ -34,6 +35,8 @@
             OTPabel = new Label();
             newpasslabel = new Label();
             confirmpasslabel = new Label();
+            pictureBox1 = new PictureBox();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // txtEmail
@@ -105,7 +108,7 @@
             // 
             resetpasslabel.AutoSize = true;
             resetpasslabel.Font = new Font("Segoe UI", 15F);
-            resetpasslabel.Location = new Point(107, 22);
+            resetpasslabel.Location = new Point(124, 23);
             resetpasslabel.Name = "resetpasslabel";
             resetpasslabel.Size = new Size(144, 28);
             resetpasslabel.TabIndex = 7;
@@ -150,10 +153,23 @@
             confirmpasslabel.TabIndex = 11;
             confirmpasslabel.Text = "confirm password:";
             // 
+            // pictureBox1
+            // 
+            pictureBox1.BackgroundImageLayout = ImageLayout.None;
+            pictureBox1.BorderStyle = BorderStyle.Fixed3D;
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Location = new Point(96, 22);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(28, 32);
+            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox1.TabIndex = 12;
+            pictureBox1.TabStop = false;
+            // 
             // ResetPassword
             // 
             BackColor = SystemColors.GradientActiveCaption;
             ClientSize = new Size(350, 360);
+            Controls.Add(pictureBox1);
             Controls.Add(confirmpasslabel);
             Controls.Add(newpasslabel);
             Controls.Add(OTPabel);
@@ -166,11 +182,13 @@
             Controls.Add(btnSendOtp);
             Controls.Add(btnReset);
             Controls.Add(btnBack);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             MaximumSize = new Size(366, 399);
             MinimumSize = new Size(366, 399);
             Name = "ResetPassword";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "ResetPassword";
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -204,5 +222,6 @@
         private Label OTPabel;
         private Label newpasslabel;
         private Label confirmpasslabel;
+        private PictureBox pictureBox1;
     }
 }

@@ -37,6 +37,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CategoryInfo));
             flpStoreCategories = new FlowLayoutPanel();
             flpProductCategories = new FlowLayoutPanel();
             btnDeleteSelected = new Button();
@@ -126,6 +127,7 @@
             Controls.Add(flpProductCategories);
             Controls.Add(btnDeleteSelected);
             Controls.Add(panel1);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             MaximumSize = new Size(480, 662);
             MinimumSize = new Size(480, 662);
             Name = "CategoryInfo";

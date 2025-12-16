@@ -22,6 +22,7 @@
 
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SendOtp));
             txtOtp = new TextBox();
             btnVerify = new Button();
             btnResend = new Button();
@@ -90,6 +91,7 @@
             Controls.Add(txtOtp);
             Controls.Add(btnVerify);
             Controls.Add(btnResend);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             MaximumSize = new Size(366, 399);
             MinimumSize = new Size(366, 399);
             Name = "SendOtp";

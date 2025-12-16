@@ -29,6 +29,7 @@
 
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CustomMessageBox));
             lblMessage = new Label();
             btnOK = new Button();
             SuspendLayout();
@@ -58,6 +59,7 @@
             ClientSize = new Size(280, 120);
             Controls.Add(lblMessage);
             Controls.Add(btnOK);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "CustomMessageBox";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Message";

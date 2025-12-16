@@ -34,6 +34,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Add));
             panelMenu = new Panel();
             btnAddShop = new Button();
             button2 = new Button();
@@ -136,6 +137,7 @@
             ClientSize = new Size(464, 623);
             Controls.Add(panelContent);
             Controls.Add(panelMenu);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             MaximumSize = new Size(480, 662);
             MinimumSize = new Size(480, 662);
             Name = "Add";

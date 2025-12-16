@@ -24,16 +24,19 @@
 
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login));
             txtUsername = new TextBox();
             txtPassword = new TextBox();
             btnLogin = new Button();
             btnSignup = new Button();
             btnForgot = new Button();
             panel1 = new Panel();
+            pictureBox1 = new PictureBox();
             loginlabel = new Label();
             passwordlabel = new Label();
             usernamelabel = new Label();
             panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // txtUsername
@@ -92,6 +95,7 @@
             // panel1
             // 
             panel1.BackColor = SystemColors.GradientActiveCaption;
+            panel1.Controls.Add(pictureBox1);
             panel1.Controls.Add(loginlabel);
             panel1.Controls.Add(passwordlabel);
             panel1.Controls.Add(usernamelabel);
@@ -106,11 +110,23 @@
             panel1.TabIndex = 5;
             panel1.Paint += panel1_Paint;
             // 
+            // pictureBox1
+            // 
+            pictureBox1.BackgroundImageLayout = ImageLayout.None;
+            pictureBox1.BorderStyle = BorderStyle.Fixed3D;
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Location = new Point(174, 85);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(43, 46);
+            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox1.TabIndex = 8;
+            pictureBox1.TabStop = false;
+            // 
             // loginlabel
             // 
             loginlabel.AutoSize = true;
             loginlabel.Font = new Font("Segoe UI", 15F);
-            loginlabel.Location = new Point(164, 97);
+            loginlabel.Location = new Point(164, 129);
             loginlabel.Name = "loginlabel";
             loginlabel.Size = new Size(66, 28);
             loginlabel.TabIndex = 7;
@@ -143,6 +159,7 @@
             BackColor = SystemColors.ActiveCaption;
             ClientSize = new Size(800, 450);
             Controls.Add(panel1);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             MaximumSize = new Size(816, 489);
             MinimumSize = new Size(816, 489);
             Name = "Login";
@@ -151,6 +168,7 @@
             Text = "Login";
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
         }
 
@@ -163,5 +181,6 @@
         private Label passwordlabel;
         private Label usernamelabel;
         private Label loginlabel;
+        private PictureBox pictureBox1;
     }
 }
