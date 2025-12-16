@@ -6,6 +6,7 @@
         /// Required designer variable.
         /// </summary>
         private System.ComponentModel.IContainer components = null;
+        private FlowLayoutPanel flpFAQ;
 
         /// <summary>
         /// Clean up any resources being used.
@@ -28,18 +29,31 @@
         /// </summary>
         private void InitializeComponent()
         {
+            flpFAQ = new FlowLayoutPanel();
             btnPanel = new Button();
             btnSearch = new Button();
             btnAdd = new Button();
             label1 = new Label();
             panel1 = new Panel();
+            button1 = new Button();
             panel1.SuspendLayout();
             SuspendLayout();
+            // 
+            // flpFAQ
+            // 
+            flpFAQ.AutoScroll = true;
+            flpFAQ.FlowDirection = FlowDirection.TopDown;
+            flpFAQ.Location = new Point(56, 102);
+            flpFAQ.Name = "flpFAQ";
+            flpFAQ.Padding = new Padding(10);
+            flpFAQ.Size = new Size(684, 445);
+            flpFAQ.TabIndex = 0;
+            flpFAQ.WrapContents = false;
             // 
             // btnPanel
             // 
             btnPanel.BackColor = SystemColors.Control;
-            btnPanel.Location = new Point(-5, 20);
+            btnPanel.Location = new Point(3, 20);
             btnPanel.Name = "btnPanel";
             btnPanel.Size = new Size(86, 45);
             btnPanel.TabIndex = 1;
@@ -86,19 +100,32 @@
             // 
             panel1.BackColor = SystemColors.ActiveCaption;
             panel1.Controls.Add(label1);
+            panel1.Controls.Add(btnPanel);
             panel1.Controls.Add(btnSearch);
             panel1.Location = new Point(-5, 0);
             panel1.Name = "panel1";
             panel1.Size = new Size(789, 85);
             panel1.TabIndex = 5;
             // 
+            // button1
+            // 
+            button1.Font = new Font("Segoe UI", 15F);
+            button1.Location = new Point(56, 553);
+            button1.Name = "button1";
+            button1.Size = new Size(684, 47);
+            button1.TabIndex = 6;
+            button1.Text = "Have a Specific Question? Contact us here.";
+            button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
+            // 
             // Help
             // 
             BackColor = SystemColors.GradientActiveCaption;
             ClientSize = new Size(784, 661);
+            Controls.Add(button1);
             Controls.Add(btnAdd);
-            Controls.Add(btnPanel);
             Controls.Add(panel1);
+            Controls.Add(flpFAQ);
             MaximumSize = new Size(800, 700);
             MinimumSize = new Size(800, 700);
             Name = "Help";
@@ -118,6 +145,7 @@
         private System.Windows.Forms.Button btnAdd;
         private Label label1;
         private Panel panel1;
+        private Button button1;
     }
 
         #endregion

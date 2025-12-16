@@ -134,17 +134,18 @@ namespace Presyong_Ka_Piyu.Main.forms.Main_Forms
                 string subject = Uri.EscapeDataString("Hello from Presyong Ka-Piyu App");
                 string body = Uri.EscapeDataString("Hi,\n\nI would like to contact you regarding...");
 
-                string mailto = $"mailto:{email}?subject={subject}&body={body}";
+                // Gmail compose URL
+                string gmailUrl = $"https://mail.google.com/mail/?view=cm&fs=1&to={email}&su={subject}&body={body}";
 
                 Process.Start(new ProcessStartInfo
                 {
-                    FileName = mailto,
+                    FileName = gmailUrl,
                     UseShellExecute = true
                 });
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Unable to open email client. " + ex.Message);
+                CustomMessageBox.Show("Unable to open Gmail. " + ex.Message);
             }
         }
     }
