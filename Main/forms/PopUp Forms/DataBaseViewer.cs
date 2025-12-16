@@ -26,7 +26,13 @@ namespace Presyong_Ka_Piyu.Main.forms.PopUp_Forms
         // 1. Load all tables into ComboBox
         private void LoadTableNames()
         {
-            string query = "SELECT name FROM sqlite_master WHERE type='table' ORDER BY name;";
+            string query = @"
+        SELECT name 
+        FROM sqlite_master 
+        WHERE type = 'table'
+          AND name NOT LIKE 'sqlite_%'
+        ORDER BY name;
+    ";
 
             using (SQLiteConnection conn = new SQLiteConnection($"Data Source={dbPath};Version=3;"))
             {

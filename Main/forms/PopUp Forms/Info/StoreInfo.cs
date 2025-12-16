@@ -26,8 +26,11 @@ namespace Presyong_Ka_Piyu.Main.forms.PopUp_Forms
             this.storeId = storeId;
 
             LoadCategories();
-            LoadStoreData();
+
             LoadLocations();
+
+            LoadStoreData();
+            
             LoadProductsForStore(storeId);
 
         }
@@ -56,9 +59,8 @@ namespace Presyong_Ka_Piyu.Main.forms.PopUp_Forms
             cmbLocation.DataSource = dt;
             cmbLocation.DisplayMember = "LocationName"; // what user sees
             cmbLocation.ValueMember = "Id";             // stored in Stores.LocationId
-
-            if (dt.Rows.Count > 0)
-                cmbLocation.SelectedIndex = 0;
+                                                        // IMPORTANT: do NOT force-select index 0
+            cmbLocation.SelectedIndex = -1;
         }
 
         private void LoadStoreData()
@@ -71,7 +73,7 @@ namespace Presyong_Ka_Piyu.Main.forms.PopUp_Forms
             if (reader.Read())
             {
                 txtName.Text = reader["Name"].ToString();
-                cmbLocation.SelectedValue = reader["LocationId"];
+                cmbLocation.SelectedValue = Convert.ToInt32(reader["LocationId"]);
                 txtContact.Text = reader["Contact"].ToString();
                 txtDescription.Text = reader["Description"].ToString();
                 cmbCategory.SelectedValue = reader["CategoryId"];
