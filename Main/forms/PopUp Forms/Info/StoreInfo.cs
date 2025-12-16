@@ -21,7 +21,6 @@ namespace Presyong_Ka_Piyu.Main.forms.PopUp_Forms
         public StoreInfo(int storeId)
         {
             InitializeComponent();
-            ThemeManager.ApplyTheme(this);
 
             this.storeId = storeId;
 
@@ -33,6 +32,7 @@ namespace Presyong_Ka_Piyu.Main.forms.PopUp_Forms
             
             LoadProductsForStore(storeId);
 
+            ThemeManager.ApplyTheme(this);
         }
 
         private void LoadCategories()
